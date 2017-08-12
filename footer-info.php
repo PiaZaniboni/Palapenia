@@ -9,6 +9,7 @@
   <li><i class="fa-li fa fa-facebook-square  fa-inverse fa-lg"></i>Palapenia</li>
   <li><i class="fa-li fa fa-instagram  fa-inverse fa-lg"></i>Palapenia</li>
   <li><i class="fa-li fa fa-envelope-o  fa-inverse fa-lg"></i>ventas@palapenia.com</li>
+   <li><i class="fa-li fa fa-envelope-o  fa-inverse fa-lg"></i>ventas@palapenia.com</li>
   
 </ul>
  </div>

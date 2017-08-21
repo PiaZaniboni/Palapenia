@@ -13,9 +13,9 @@
 
         <!-- Jumbotron Header -->
         <header  >
-        <h4 class="wow slideInLeft">Campaña Otoño-Invierno 2017</h4>
+        <h4 class="animated slideInLeft">Campaña Otoño-Invierno 2017</h4>
         
-            <p class="wow slideInLeft">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</br> Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique </br>quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+            <p class="animated slideInLeft">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</br> Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique </br>quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
             
         </header>
 
@@ -28,7 +28,7 @@
   
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner wow slideInUp">
+    <div class="carousel-inner animated slideInUp">
       <div class="item active">
         <img src="images/2.jpg" alt="">
       </div>
@@ -43,11 +43,11 @@
     </div>
 
     <!-- Left and right controls -->
-    <a class="left carousel-control wow slideInUp" href="#myCarousel2" data-slide="prev">
+    <a class="left carousel-control animated slideInUp" href="#myCarousel2" data-slide="prev">
      <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control wow slideInUp" href="#myCarousel2" data-slide="next">
+    <a class="right carousel-control animated slideInUp" href="#myCarousel2" data-slide="next">
      <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only">Next</span>
     </a>

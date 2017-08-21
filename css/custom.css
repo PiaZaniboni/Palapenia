@@ -783,9 +783,9 @@ line-height: 2.1;
 
 
 /*lookbook*/
-#lookbook .forma{
+ #lookbook .forma{
 
-  width: 60%;
+  width: 80%;
   margin: auto;
 }
 #lookbook header{
@@ -802,11 +802,12 @@ letter-spacing: 0.1em;
 font-size: 18px;
   font-weight: 300;
 }
+#lookbook 
 
-
-.carousel-inner > .item > img, 
-.carousel-inner > .item > a > img{
-width: 100%; /* use this, or not */
+.carousel-inner > .item  >  img, 
+.carousel-inner > .item  > a > img{
+width: 100%;
+height: 100%; /* use this, or not */
 margin: auto;
 }
 .carousel-control.left {

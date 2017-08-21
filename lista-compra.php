@@ -12,11 +12,11 @@
    <div class="container ">
 
     <div class="nombre-producto">
-  <p class="wow slideInUp">Lista de compras</p>
+  <p class="animated slideInUp">Lista de compras</p>
 </div>
   
     <div class="table-responsive">
-    <table class="table wow fadeIn  ">
+    <table class="table animated fadeIn  ">
         
             <thead >
                <tr> 

@@ -10,7 +10,7 @@
 
 <div class="container">
 <div class="nombre-producto">
-  <p class="wow slideInUp">Remeras y tops/Remera XXX</p>
+  <p class="animated slideInUp">Remeras y tops/Remera XXX</p>
 </div>
 <div id="producto">
     <div class="row ">
@@ -18,7 +18,7 @@
     
  
 
-          <div class="col-lg-6 wow fadeIn">
+          <div class="col-lg-6 animated fadeIn">
            <h4>REMERA / XXX </h4>
     
          <p>efbhucinjsxfecndjsxf</br>ecdn s cklnckqwjdncñ
@@ -88,13 +88,13 @@
                             <div class="  slide" id="myCarousel2">
                                 <!-- Carousel items -->
                                 <div class="carousel-inner ">
-                                    <div class="active item img-responsive wow fadeIn" data-slide-number="0">
+                                    <div class="active item img-responsive animated fadeIn" data-slide-number="0">
                                         <img src="images/2.jpg"></div>
 
-                                    <div class="item img-responsive wow fadeIn" data-slide-number="1">
+                                    <div class="item img-responsive animated fadeIn" data-slide-number="1">
                                         <img src="images/3.jpg"></div>
 
-                                    <div class="item img-responsive wow fadeIn" data-slide-number="2">
+                                    <div class="item img-responsive animated fadeIn" data-slide-number="2">
                                         <img src="images/4.jpg"></div>
 
                                     
@@ -115,17 +115,17 @@
                 <!-- Bottom switcher of slider -->
                 <ul class="hide-bullets">
                     <li >
-                        <a class="thumbnail wow fadeIn" id="carousel-selector-0">
+                        <a class="thumbnail animated fadeIn" id="carousel-selector-0">
                             <img src="images/2.jpg">
                         </a>
                     </li>
 
                     <li >
-                        <a class="thumbnail wow fadeIn" id="carousel-selector-1"><img src="images/3.jpg"></a>
+                        <a class="thumbnail animated fadeIn" id="carousel-selector-1"><img src="images/3.jpg"></a>
                     </li>
 
                     <li >
-                        <a class="thumbnail wow fadeIn" id="carousel-selector-2"><img src="images/4.jpg"></a>
+                        <a class="thumbnail animated fadeIn" id="carousel-selector-2"><img src="images/4.jpg"></a>
                     </li>
 
                     

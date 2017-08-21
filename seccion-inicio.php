@@ -1,10 +1,11 @@
-<div class="container">
+    <div id="home">
+    <div class="container">
     <div class="row  ">
     <div class="espacio">
    
-  <div class="col-sm-4 "><img class="img-responsive wow slideInUp " src="images/2.jpg" alt="" ></div>
-  <div class="col-sm-4 "><img class="img-responsive wow slideInUp" src="images/3.jpg" alt="" ></div>
- <div class="col-sm-4 "><img class="img-responsive wow slideInUp" src="images/4.jpg" alt="" ></div>
+  <div class="col-sm-4 "><img class="img-responsive animated slideInUp " src="images/2.jpg" alt="" ></div>
+  <div class="col-sm-4 "><img class="img-responsive animated slideInUp" src="images/3.jpg" alt="" ></div>
+ <div class="col-sm-4 "><img class="img-responsive animated slideInUp" src="images/4.jpg" alt="" ></div>
 </div>
 
 </div>
@@ -20,11 +21,16 @@
 
 <div id="fondocampania">
 
- <div class="pasos">
+ 
     <img class="img-responsive animated wow slideInUp" src="images/campania.svg" alt="" >
  
-</div>
+
     </div>
         </div>
+        
+     
+</div>
+   
+
 
 </div>

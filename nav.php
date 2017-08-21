@@ -34,7 +34,7 @@
           <ul class="dropdown-menu">
             <li><a href="seccion-lookbook.php">Primavera/verano 2018</a></li>
             <li class="divider"></li>
-            <li><a href="seccion-lookbook.php">Otoño/invierno 2017</a></li>
+            <li><a href="lookbook-otonio.php">Otoño/invierno 2017</a></li>
             
           </ul>
         </li>

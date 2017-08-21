@@ -14,15 +14,15 @@
 
   <div class=" jumbotron hero-spacer  ">
  <div class="col-md-6 ">
- <h2 class="wow slideInLeft">PALAPENIA</h2>
- <p class="wow slideInLeft">Palapenia es un emprendimiento argentino,</br> especializado en el diseño, producción y comercialización</br> de prendas femeninas, muchas veces únicas. </br>
+ <h2 class="animated slideInLeft">PALAPENIA</h2>
+ <p class="animated slideInLeft">Palapenia es un emprendimiento argentino,</br> especializado en el diseño, producción y comercialización</br> de prendas femeninas, muchas veces únicas. </br>
 Se dirige especialmente a la mujer de espÍritu </br>urbano y elegante, que se ilusiona al encontrar en las prendas una forma de expresión personal.</br>
 <strong>Palapenia tiene claro que las personas son su verdadero éxito,</strong> de ahí el origen de su nombre.</p>
 
  </div>
 
  <div class="col-md-6 ">
- <img class="img-responsive wow fadeIn " src="images/3.jpg" alt="" >
+ <img class="img-responsive animated fadeIn " src="images/3.jpg" alt="" >
 
  </div>
 

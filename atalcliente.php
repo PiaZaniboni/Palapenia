@@ -14,7 +14,7 @@
    
     <div class="pasos">
     
-    <img class="img-responsive wow slideInUp " src="images/comprar.svg" alt="" >
+    <img class="img-responsive animated slideInUp " src="images/comprar.svg" alt="" >
  
 
 </div>

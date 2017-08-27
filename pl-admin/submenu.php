@@ -2,17 +2,17 @@
 <?php
 
 if(isset($_SESSION["logged_user"])){
-	if($_SESSION["logged_user"] === true){ 
+	if($_SESSION["logged_user"] === true){
 		if(isset($_GET["c"])){
 ?>
 			<?php
 			if(isset($_GET["a"])){
-				if($_GET["a"] !== "add" && 
-					$_GET["a"] !== "edit" && 
-					$_GET["a"] !== "edit_image" && 
-					$_GET["a"] !== "edit_gallery" && 
+				if($_GET["a"] !== "add" &&
+					$_GET["a"] !== "edit" &&
+					$_GET["a"] !== "edit_image" &&
+					$_GET["a"] !== "edit_gallery" &&
 					$_GET["a"] !== "edit_file"
-				){ 
+				){
 			?>
 
 <a href="<?php echo generateURL($_GET["c"], 'add')?>" class="pull-right">
@@ -26,7 +26,7 @@ if(isset($_SESSION["logged_user"])){
 </a>
 
 			<?php
-				}	
+				}
 			} else {
 			?>
 
@@ -36,7 +36,7 @@ if(isset($_SESSION["logged_user"])){
 
         <?php
 			}
-		} else { 
+		} else {
 		?>
 
 <a href="<?php echo generateURL(DEFAULT_CONTROLLER, 'add')?>" class="pull-right">

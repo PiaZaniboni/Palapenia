@@ -30,9 +30,9 @@ require_once("app/functions.php");
 </head>
 
 <body>
-    
+
     <header>
-    	
+
         <div id="logo" class="pull-left">
             <a href="<?php echo APP_PATH ?>">
                 <img src="<?php echo APP_PATH ?>/img/logo.png" width="" height="">
@@ -43,29 +43,29 @@ require_once("app/functions.php");
             	<li>
                     <a href="<?php echo WEB_PATH ?>" target="_blank">
                         <?php echo GO_TO_SITE_TEXT ?>
-                    </a>    
+                    </a>
                 </li>
                 <?php if(isset($_SESSION["logged_user"])){ ?>
                 <li>
                     <a href="<?php echo generateURL('system', 'logout') ?>">
                         <?php echo CLOSE_SESSION_TEXT ?>
-                    </a>    
+                    </a>
                 </li>
                 <?php } ?>
             </ul>
         </nav>
-        
+
     </header>
-    
+
     <section class="container">
-    
+
     	<?php if(isset($_SESSION["logged_user"])){ ?>
     	<aside class="pull-left">
         	<nav>
             	<ul>
                     <li>
                         <a href="<?php echo generateURL('product', 'list')?>" <?php echo isset($_GET['c']) && $_GET['c'] === 'product' ? 'class="active"' : '' ?>>
-                            <span class="glyphicon glyphicon-asterisk"></span>
+                            <span class="glyphicon glyphicon-shopping-cart"></span>
                             PRODUCTOS
                         </a>
                     </li>
@@ -75,11 +75,17 @@ require_once("app/functions.php");
                             COLOR
                         </a>
                     </li>
+                    <li>
+                        <a href="<?php echo generateURL('lookbook', 'list')?>" <?php echo isset($_GET['c']) && $_GET['c'] === 'lookbook' ? 'class="active"' : '' ?>>
+                            <span class="glyphicon glyphicon-tag"></span>
+                            LOOKBOOK
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </aside>
         <?php } ?>
-       
+
         <div id="content" class="pull-right">
         	<?php if(isset($_SESSION["logged_user"])){ ?>
         	<h1>
@@ -89,7 +95,7 @@ require_once("app/functions.php");
 				} else {
 					if($_GET['c'] === "system"){
 						if($_GET['a'] !== "logout"){
-							echo ucwords(DEFAULT_CONTROLLER) . 's';	
+							echo ucwords(DEFAULT_CONTROLLER) . 's';
 						}
                     } else if($_GET['c'] === "product"){
                         echo "Productos";
@@ -105,7 +111,7 @@ require_once("app/functions.php");
             $app->run();
             ?>
         </div>
-        
+
     </section>
 
 </body>

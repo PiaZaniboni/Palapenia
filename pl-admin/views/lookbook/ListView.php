@@ -41,7 +41,7 @@ class ListView extends View {
         <thead>
             <tr>
                 <th>
-                	Nombre
+                	A&ntilde;o
                 </th>
                 <th>
                     Coleccion

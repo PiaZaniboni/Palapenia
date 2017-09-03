@@ -28,7 +28,7 @@ class EditView extends View {
 
                     <div>
                         <label for="name">
-                            Nombre <small>(*)</small>
+                            A&ntilde;o <small>(*)</small>
                         </label>
                         <input name="name" type="text" value="<?php echo $lookbook->getName() ?>" required />
                     </div>
@@ -41,21 +41,21 @@ class EditView extends View {
                             <option value="" selected>
                                 Seleccionar
                             </option>
-                            <? if($lookbook->getColeccion() === "Oto&ntilde;o / Invierno"){ ?>
-                            <option value="Oto&ntilde;o / Invierno" selected>
-                                Oto&ntilde;o / Invierno
-                            </option>
-                            <option value="Primavera / Verano">
-                                Primavera / Verano
-                            </option>
-                            <? } else { ?>
-                            <option value="Oto&ntilde;o / Invierno">
-                                Oto&ntilde;o / Invierno
-                            </option>
-                            <option value="Primavera / Verano" selected>
-                                Primavera / Verano
-                            </option>
-                            <? } ?>
+                            <?php if($lookbook->getColeccion() === "Oto&ntilde;o / Invierno"){ ?>
+                              <option value="Oto&ntilde;o / Invierno" selected>
+                                  Oto&ntilde;o / Invierno
+                              </option>
+                              <option value="Primavera / Verano">
+                                  Primavera / Verano
+                              </option>
+                            <?php } else { ?>
+                              <option value="Oto&ntilde;o / Invierno">
+                                  Oto&ntilde;o / Invierno
+                              </option>
+                              <option value="Primavera / Verano" selected>
+                                  Primavera / Verano
+                              </option>
+                            <?php } ?>
                         </select>
                     </div>
 

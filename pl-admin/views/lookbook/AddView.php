@@ -28,7 +28,7 @@ class AddView extends View {
 
                     <div>
                         <label for="name">
-                            Nombre <small>(*)</small>
+                            A&ntilde;o <small>(*)</small>
                         </label>
                         <input name="name" type="text" required />
                     </div>

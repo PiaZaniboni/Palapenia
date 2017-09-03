@@ -78,7 +78,7 @@ class LookbookModel {
      * @return integer
      */
 	public function editLookbook(Lookbook $lookbook){
-		$sql = "UPDATE $lookbook
+		$sql = "UPDATE lookbook
 			SET id_lookbook = '" . $lookbook->getIdLookbook() .
 			"', name = '" . replaceCharacters($lookbook->getName()) .
 			"', coleccion = '" . $lookbook->getColeccion() .

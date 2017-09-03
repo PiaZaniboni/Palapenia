@@ -14,8 +14,8 @@ define("NO_TEXT", "No");
 define("REQUIRED_FIELDS_TEXT", "Los campos con * son obligatorios.");
 
 if($_SERVER["HTTP_HOST"] === "localhost"){
-	define("WEB_PATH", "http://localhost/palapenia");
-	define("APP_PATH", "http://localhost/palapenia/pl-admin");
+	define("WEB_PATH", "http://localhost:8888/palapenia");
+	define("APP_PATH", "http://localhost:8888/palapenia/pl-admin");
 
 	define("DB_NAME", "palapenia-db");
 	define("DB_USER", "root");

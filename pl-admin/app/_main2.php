@@ -8,7 +8,9 @@
 function connect(){
 	if($_SERVER["HTTP_HOST"] === "localhost"){
 		return mysqli_connect("localhost", "root", "", "palapenia-db");
-	} else {
+	}else if($_SERVER["HTTP_HOST"] === "localhost:8888"){
+		return mysqli_connect("localhost", "root", "root", "palapenia-db");
+	}else {
 		return mysqli_connect("localhost", "cw000502_ensimis", "valaleSE92", "cw000502_ensimis");
 	}
 	/*if(mysqli_connect_errno()){

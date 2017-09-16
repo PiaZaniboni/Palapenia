@@ -1,9 +1,3 @@
-<?php
-require_once("requests/_get_lookbooks.php");
-require_once("requests/_get_lookbook_image.php");
-
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -11,12 +5,12 @@ require_once("requests/_get_lookbook_image.php");
 
 <body >
 
-<!-- Nav -->
-<?php include 'nav.php';?>
+    <!-- Nav -->
+    <?php include 'nav.php';?>
 
  <div id="lookbook">
     <div class="container">
-
+        <?php $id = $_GET['ID']; ?>
         <!-- Jumbotron Header -->
         <!--<header>
         <h4 class="animated slideInLeft">Campaña Otoño-Invierno 2017</h4>
@@ -25,8 +19,9 @@ require_once("requests/_get_lookbook_image.php");
 
         </header> -->
 
-        <?php foreach( $lookbooks as $lookbook ){ ?> <!-- Front-end lookbook -->
-        <?php  if ( $lookbook['coleccion'] == 'Primavera / Verano' ) {  ?>
+        <?php
+        foreach( $lookbooks as $lookbook ){ ?> <!-- Front-end lookbook -->
+        <?php  if ( $lookbook['id_lookbook'] == $id ) {  ?>
 
           <header>
           <h4 class="animated slideInLeft"><?php echo $lookbook['coleccion'] ;?> <?php echo $lookbook['name'] ;?></h4>

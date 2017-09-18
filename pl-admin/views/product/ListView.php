@@ -30,9 +30,9 @@ class ListView extends View {
       </div>
     </div>
 
-    <?php if(empty($products)){ ?>
+    <?php if(empty($products["products"])){ ?>
     
-    <p> No hay productos cargados/as por el momento. </p>
+    <p> No hay productos cargados por el momento. </p>
     
     <?php } else { ?>
    
@@ -59,7 +59,7 @@ class ListView extends View {
         </thead>
         
         <tbody>       	
-			<?php foreach($products as $product){ ?>
+			<?php foreach($products["products"] as $product){ ?>
             <tr>
                 <td>
                 	<?php echo $product->getName() ?>
@@ -73,16 +73,76 @@ class ListView extends View {
                     </a>
                 </td>            
                 <td class="border-cell">
-                    <?php if($product->getIdProduct() !== '0'){ ?>
                 	<a href="<?php echo $this->generateURL('product', 'edit', $product->getIdProduct()) ?>">
                     	<span class="glyphicon glyphicon-pencil"></span>
                     </a>
-                    <?php } ?>
                 </td>
                 <td>
                     <?php if($product->getIdProduct() !== '0'){ ?>
                 	<a class="delete-link" href="<?php echo $this->generateURL('product', 'delete', $product->getIdProduct()) ?>">
                     	<span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                    <?php } ?>
+                </td>
+            </tr>
+            <?php } ?>
+        </tbody>
+        
+    </table>
+
+     <?php } ?>
+    
+    <?php if($products["products_sale"]){ ?>
+
+    <h1>Productos Sale</h1>
+   
+    <table>
+        
+        <thead>
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Descripci&oacute;n
+                </th>
+                <th>
+                    Galer&iacute;a
+                </th>
+                <th class="border-cell">
+                    Modificar
+                </th>
+                <th>    
+                    Eliminar
+                </th>
+            </tr>
+        </thead>
+        
+        <tbody>         
+            <?php foreach($products["products_sale"] as $product){ ?>
+            <tr>
+                <td>
+                    <?php echo $product->getName() ?>
+                </td>
+                <td>
+                    <?php echo $product->getDescription() ?>
+                </td>
+                <td>
+                    <a href="<?php echo $this->generateURL('product', 'edit_gallery', $product->getIdProduct()) ?>">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </a>
+                </td>            
+                <td class="border-cell">
+                    <?php if($product->getIdProduct() !== '0'){ ?>
+                    <a href="<?php echo $this->generateURL('product', 'edit', $product->getIdProduct()) ?>">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <?php } ?>
+                </td>
+                <td>
+                    <?php if($product->getIdProduct() !== '0'){ ?>
+                    <a class="delete-link" href="<?php echo $this->generateURL('product', 'delete', $product->getIdProduct()) ?>">
+                        <span class="glyphicon glyphicon-trash"></span>
                     </a>
                     <?php } ?>
                 </td>

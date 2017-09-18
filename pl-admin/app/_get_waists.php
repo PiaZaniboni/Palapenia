@@ -2,7 +2,7 @@
 
 require_once("_main.php");
 
-$waists = getWaists($_GET["id_subcategory"]);
+$waists = getWaists($_GET["id_category"]);
 
 $status = "Success";
 $arr = json_encode(array(

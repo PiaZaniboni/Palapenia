@@ -2,7 +2,7 @@
 <?php
 
 class Color {
-	
+
 	/**
      * Entity ID.
      *
@@ -29,16 +29,16 @@ class Color {
 	public function __construct($idColor, $color, $initial){
 		$this->idColor = $idColor;
 		$this->color = $color;
-          $this->initial = $initial;
+        $this->initial = $initial;
      }
-	
+
 	/**
      * Get the entity ID.
      *
      * @return integer
      */
 	public function getIdColor(){
-		return $this->idColor;	
+		return $this->idColor;
 	}
 
 	/**
@@ -47,7 +47,7 @@ class Color {
      * @return string
      */
 	public function getColor(){
-		return $this->color;	
+		return $this->color;
 	}
 
      /**
@@ -56,7 +56,7 @@ class Color {
      * @return string
      */
      public function getInitial(){
-          return $this->initial;     
+          return $this->initial;
      }
 
 }

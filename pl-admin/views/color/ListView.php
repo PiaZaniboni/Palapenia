@@ -41,7 +41,7 @@ class ListView extends View {
         <thead>
             <tr>
                 <th>
-                	Color
+                	Trama
                 </th>
                 <th>
                     Inicial

@@ -31,12 +31,19 @@ class Product {
      */
      private $description;
 
-      /**
+     /**
      * Entity's price.
      *
      * @var string
      */
      private $price;
+
+     /**
+     * Entity's price sale.
+     *
+     * @var string
+     */
+     private $priceSale;
 
      /**
      * Entity frame file.
@@ -59,12 +66,13 @@ class Product {
      * @param string  $name
      * @return null
      */
-	public function __construct($idProduct, $idCategory, $name, $description, $price, $frameProduct, $frameType){
+	public function __construct($idProduct, $idCategory, $name, $description, $price, $priceSale, $frameProduct, $frameType){
 		$this->idProduct = $idProduct;
           $this->idCategory = $idCategory;
 		$this->name = $name;
           $this->description = $description;
           $this->price = $price;
+          $this->priceSale = $priceSale;
           $this->frameProduct = $frameProduct;
           $this->frameType = $frameType;
      }
@@ -112,6 +120,15 @@ class Product {
      */
      public function getPrice(){
           return $this->price; 
+     }
+
+     /**
+     * Get the entity's price sale.
+     *
+     * @return integer
+     */
+     public function getPriceSale(){
+          return $this->priceSale; 
      }
 
      /**

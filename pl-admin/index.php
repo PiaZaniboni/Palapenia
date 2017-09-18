@@ -72,7 +72,7 @@ require_once("app/functions.php");
                     <li>
                         <a href="<?php echo generateURL('color', 'list')?>" <?php echo isset($_GET['c']) && $_GET['c'] === 'color' ? 'class="active"' : '' ?>>
                             <span class="glyphicon glyphicon-adjust"></span>
-                            COLOR
+                            TRAMA
                         </a>
                     </li>
                     <li>

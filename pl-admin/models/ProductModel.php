@@ -2,7 +2,7 @@
 <?php
 
 class ProductModel {
-	
+
 	/**
      * Get all the products saved in the database.
      *
@@ -10,15 +10,16 @@ class ProductModel {
      */
 	public function getProducts(){
 		$products = array();
-		$sql = "SELECT * FROM product ORDER BY id_product DESC";
+		$sql = "SELECT * FROM product WHERE price_sale = 0 OR price_sale = null OR price_sale = '' ORDER BY id_product DESC";
 		$res = DB::query($sql);
 		while($row = mysqli_fetch_assoc($res)){
 			$products[] = new Product (
-				$row['id_product'], 
-				$row['id_category'], 
+				$row['id_product'],
+				$row['id_category'],
 				$row['name'],
 				$row['description'],
 				$row['price'],
+				$row['price_sale'],
 				"", ""/*,
 				$row['frame_product'],
 				$row['frame_type']*/
@@ -27,7 +28,7 @@ class ProductModel {
 		DB::free($res);
 		return $products;
 	}
-	
+
 	/**
      * Get a product saved in the database.
      *
@@ -40,16 +41,43 @@ class ProductModel {
 		$row = mysqli_fetch_assoc($res);
 		$product = new Product (
 			$row['id_product'],
-			$row['id_category'],  
-			$row['name'], 
+			$row['id_category'],
+			$row['name'],
 			$row['description'],
 			$row['price'],
+			$row['price_sale'],
 			"", ""/*,
 			$row['frame_product'],
 			$row['frame_type']*/
 		);
 		DB::free($res);
 		return $product;
+	}
+
+	/**
+     * Get all the products saved in the database.
+     *
+     * @return array
+     */
+	public function getProductsSale(){
+		$products = array();
+		$sql = "SELECT * FROM product WHERE price_sale != '' OR price_sale != null OR price_sale != '0' ORDER BY id_product DESC";
+		$res = DB::query($sql);
+		while($row = mysqli_fetch_assoc($res)){
+			$products[] = new Product (
+				$row['id_product'],
+				$row['id_category'],
+				$row['name'],
+				$row['description'],
+				$row['price'],
+				$row['price_sale'],
+				"", ""/*,
+				$row['frame_product'],
+				$row['frame_type']*/
+			);
+		}
+		DB::free($res);
+		return $products;
 	}
 
 	/**
@@ -63,12 +91,14 @@ class ProductModel {
 			id_category,
 			name,
 			description,
-			price
-		) VALUES ('" . 
-			$product->getIdCategory() . "', '" . 
-			replaceCharacters($product->getName()) . "', '" . 
-			replaceCharacters($product->getDescription()) . "', '" . 
-			$product->getPrice() . 
+			price,
+			price_sale
+		) VALUES ('" .
+			$product->getIdCategory() . "', '" .
+			replaceCharacters($product->getName()) . "', '" .
+			replaceCharacters($product->getDescription()) . "', '" .
+			$product->getPrice() . "', '" .
+			$product->getPriceSale() .
 		"')";
 		return DB::query($sql);
 	}
@@ -80,16 +110,17 @@ class ProductModel {
      * @return integer
      */
 	public function editProduct(Product $product){
-		$sql = "UPDATE product 
-			SET id_product = '" . $product->getIdProduct() . 
-			"', id_category = '" . $product->getIdCategory() . 
-			"', name = '" . replaceCharacters($product->getName()) .  
-			"', description = '" . replaceCharacters(strip_tags($product->getDescription())) . 
-			"', price = '" . $product->getPrice() . 
+		$sql = "UPDATE product
+			SET id_product = '" . $product->getIdProduct() .
+			"', id_category = '" . $product->getIdCategory() .
+			"', name = '" . replaceCharacters($product->getName()) .
+			"', description = '" . replaceCharacters(strip_tags($product->getDescription())) .
+			"', price = '" . $product->getPrice() .
+			"', price_sale = '" . $product->getPriceSale() .
 			"' WHERE id_product = '" . $product->getIdProduct() . "'";
 		return DB::query($sql);
 	}
-	
+
 	/**
      * Delete a product saved in the database.
      *
@@ -112,8 +143,8 @@ class ProductModel {
 		$res = DB::query($sql);
 		while($row = mysqli_fetch_assoc($res)){
 			$colors[] = new Color (
-				$row['id_color'], 
-				$row['color'], 
+				$row['id_color'],
+				$row['color'],
 				$row['initial']
 			);
 		}
@@ -127,22 +158,22 @@ class ProductModel {
      * @param Product $product
      * @return integer
      */
-	/*public function addStockProduct($prCaWaCoSt){
+	public function addStockProduct($prCaWaCoSt){
 		$sql = "INSERT INTO pr_ca_wa_co_st (
 			id_product,
 			id_category,
 			id_waist,
 			id_color,
 			stock
-		) VALUES ('" . 
-			$prCaWaCoSt["id_product"] . "', '" . 
-			$prCaWaCoSt["id_category"] . "', '" . 
-			$prCaWaCoSt["id_waist"] . "', '" . 
-			$prCaWaCoSt["id_color"] . "', '" . 
+		) VALUES ('" .
+			$prCaWaCoSt["id_product"] . "', '" .
+			$prCaWaCoSt["id_category"] . "', '" .
+			$prCaWaCoSt["id_waist"] . "', '" .
+			$prCaWaCoSt["id_color"] . "', '" .
 			$prCaWaCoSt["stock"] .
 		"')";
 		return DB::query($sql);
-	}*/
+	}
 
 	/**
      * Add a product to the database.
@@ -150,22 +181,22 @@ class ProductModel {
      * @param Product $product
      * @return integer
      */
-	public function addStockProduct($prCaSuWaSt){
+	/*public function addStockProduct($prCaWaCoSt){
 		$sql = "INSERT INTO pr_ca_su_wa_st (
 			id_product,
 			id_category,
 			id_subcategory,
 			id_waist,
 			stock
-		) VALUES ('" . 
-			$prCaSuWaSt["id_product"] . "', '" . 
-			$prCaSuWaSt["id_category"] . "', '" . 
-			$prCaSuWaSt["id_subcategory"] . "', '" . 
-			$prCaSuWaSt["id_waist"] . "', '" . 
-			$prCaSuWaSt["stock"] .
+		) VALUES ('" .
+			$prCaWaCoSt["id_product"] . "', '" .
+			$prCaWaCoSt["id_category"] . "', '" .
+			$prCaWaCoSt["id_subcategory"] . "', '" .
+			$prCaWaCoSt["id_waist"] . "', '" .
+			$prCaWaCoSt["stock"] .
 		"')";
 		return DB::query($sql);
-	}
+	}*/
 
 	public function getStockProduct($idProduct){
 		$stock = array();
@@ -173,11 +204,11 @@ class ProductModel {
 		$res = DB::query($sql);
 		while($row = mysqli_fetch_assoc($res)){
 			$stock[] = array(
-				$row['id_product'], 
-				$row['id_category'],
-				$row['id_waist'],
-				$row['id_color'],
-				$row['stock']
+				"id_product" => $row['id_product'],
+				"id_category" => $row['id_category'],
+				"id_waist" => $row['id_waist'],
+				"id_color" => $row['id_color'],
+				"stock" => $row['stock']
 			);
 		}
 		DB::free($res);
@@ -206,7 +237,7 @@ class ProductModel {
 		$res = DB::query($sql);
 		while($row = mysqli_fetch_assoc($res)){
 			$categories[] = new Category (
-				$row['id_category'], 
+				$row['id_category'],
 				$row['category']
 			);
 		}
@@ -215,24 +246,44 @@ class ProductModel {
 	}
 
 	/**
+     * Get all the categories saved in the database.
+     *
+     * @return array
+     */
+	/*public function getSubcategories(){
+		$subcategories = array();
+		$sql = "SELECT * FROM subcategory ORDER BY id_subcategory ASC";
+		$res = DB::query($sql);
+		while($row = mysqli_fetch_assoc($res)){
+			$subcategories[] = new Subcategory (
+				$row['id_subcategory'],
+				$row['id_category'],
+				$row['subcategory']
+			);
+		}
+		DB::free($res);
+		return $subcategories;
+	}*/
+
+	/**
      * Get all the waists saved in the database by subcategory.
      *
      * @return array
      */
-	public function getWaistsByIdSubcategory($idSubcategory){
+	/*public function getWaistsByIdCategory($idCategory){
 		$waists = array();
-		$sql = "SELECT * FROM waist WHERE id_subcategory = '" . $idSubcategory . "' ORDER BY id_waist ASC";
+		$sql = "SELECT * FROM waist WHERE id_category = '" . $idCategory . "' ORDER BY id_waist ASC";
 		$res = DB::query($sql);
 		while($row = mysqli_fetch_assoc($res)){
 			$waists[] = new Waist (
-				$row['id_waist'], 
-				$row['id_subcategory'],
+				$row['id_waist'],
+				$row['id_category'],
 				$row['waist']
 			);
 		}
 		DB::free($res);
 		return $waists;
-	}
+	}*/
 
 	/**
      * Get the gallery linked to a product.
@@ -242,15 +293,15 @@ class ProductModel {
      */
 	public function getGallery($idProduct){
 		$gallery = array();
-		$sql = "SELECT * FROM product_image 
-			WHERE id_product = '" . $idProduct . "' 
+		$sql = "SELECT * FROM product_image
+			WHERE id_product = '" . $idProduct . "'
 			ORDER BY id_product_image ASC";
 		$res = DB::query($sql);
 		while($row = mysqli_fetch_assoc($res)){
 			$gallery[] = new ProductImage(
-				$row['id_product_image'], 
-				$row["id_product"], 
-				$row['product_image'], 
+				$row['id_product_image'],
+				$row["id_product"],
+				$row['product_image'],
 				$row['type_image']);
 		}
 		DB::free($res);
@@ -268,16 +319,16 @@ class ProductModel {
 		$allowedExtensions = array("gif", "jpeg", "jpg", "png", "GIF", "JPEG", "JPG", "PNG");
 		$temp = explode(".", $title);
 		$extension = end($temp);
-		if((($type === "image/gif") || 
-			($type === "image/jpeg") || 
-			($type === "image/jpg") || 
-			($type === "image/pjpeg") || 
+		if((($type === "image/gif") ||
+			($type === "image/jpeg") ||
+			($type === "image/jpg") ||
+			($type === "image/pjpeg") ||
 			($type === "image/x-png") ||
-			($type === "image/png")) && 
+			($type === "image/png")) &&
 			in_array($extension, $allowedExtensions)){
 			return true;
 		} else {
-			return false;	
+			return false;
 		}
 	}
 
@@ -293,10 +344,10 @@ class ProductModel {
 		DB::connect();
 		$sql = "INSERT INTO product_image (
 			id_product,
-			product_image, 
-			type_image 
-		) VALUES ('" . 
-			$idProduct . "', '" . 
+			product_image,
+			type_image
+		) VALUES ('" .
+			$idProduct . "', '" .
 			mysqli_real_escape_string(DB::$connection, file_get_contents($image)) . "', '" .
 			$type .
 		"')";
@@ -336,16 +387,16 @@ class ProductModel {
 		$allowedExtensions = array("gif", "jpeg", "jpg", "png", "GIF", "JPEG", "JPG", "PNG");
 		$temp = explode(".", $name);
 		$extension = end($temp);
-		if((($type === "image/gif") || 
-			($type === "image/jpeg") || 
-			($type === "image/jpg") || 
-			($type === "image/pjpeg") || 
-			($type === "image/x-png") || 
-			($type === "image/png")) && 
+		if((($type === "image/gif") ||
+			($type === "image/jpeg") ||
+			($type === "image/jpg") ||
+			($type === "image/pjpeg") ||
+			($type === "image/x-png") ||
+			($type === "image/png")) &&
 			in_array($extension, $allowedExtensions)){
 			return true;
 		} else {
-			return false;	
+			return false;
 		}
 	}
 
@@ -359,8 +410,8 @@ class ProductModel {
      */
 	public function addFrameProduct($frame, $type, $idProduct){
 		DB::connect();
-		$sql = "UPDATE product SET 
-			frame_product = '" . mysqli_real_escape_string(DB::$connection, file_get_contents($frame)) . "', 
+		$sql = "UPDATE product SET
+			frame_product = '" . mysqli_real_escape_string(DB::$connection, file_get_contents($frame)) . "',
 			frame_type = '" . $type .
 		"' WHERE id_product = '" . $idProduct . "'";
 		DB::query($sql);
@@ -373,8 +424,8 @@ class ProductModel {
      * @return integer
      */
 	public function deleteFrameProduct($idProduct){
-		$sql = "UPDATE product 
-			SET frame_product = NULL" . 
+		$sql = "UPDATE product
+			SET frame_product = NULL" .
 			", frame_type = ''" .
 			"WHERE id_product = '" . $idProduct . "'";
 		return DB::query($sql);

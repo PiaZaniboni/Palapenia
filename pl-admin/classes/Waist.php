@@ -2,27 +2,27 @@
 <?php
 
 class Waist {
-	
+
 	private $idWaist;
-	private $idSubcategory;
+	private $idCategory;
 	private $waist;
-	
-	public function __construct($idWaist, $idSubcategory, $waist){
+
+	public function __construct($idWaist, $idCategory, $waist){
 		$this->idWaist = $idWaist;
-		$this->idSubcategory = $idSubcategory;
+		$this->idCategory = $idCategory;
 		$this->waist = $waist;
 	}
 	
 	public function getIdWaist(){
-		return $this->idWaist;	
+		return $this->idWaist;
 	}
 
-	public function getIdSubcategory(){
-		return $this->idSubcategory;	
+	public function getIdCategory(){
+		return $this->idCategory;
 	}
 
 	public function getWaist(){
-		return $this->waist;	
+		return $this->waist;
 	}
-		
+
 }

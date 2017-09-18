@@ -1,14 +1,10 @@
 body {
-  padding-top: 10px;
+  padding-top: 60px;
   font-family: 'Roboto', sans-serif;
-  
 }
 
 .hero-spacer {
-    
     background: #FFFFFF;
-
-  
 }
 
 .hero-feature {
@@ -28,10 +24,15 @@ body {
 }
   }
 /*-----navbar-----*/
+
+#menu{
+  margin-top: 5px;
+}
+
 .logo .img-responsive {
  margin: 0 auto;
- margin-bottom: 20px;
-  max-width: 20%;
+ margin-bottom: 40px; 
+ max-width: 20%;
 
 }
 
@@ -39,37 +40,40 @@ body {
   margin-top: 10px;
 }
 
-.navbar-default {
+.nav>.item-carro {
+  position: absolute;
+}
 
+.navbar-default {
   background-color: #FFFFFF;
   border-color: #2A2C2B;
- border-radius: 0px;
+  border-radius: 0px;
   border-left: none;
   border-right: none;
-
-
 }
+
 .navbar-nav {
     float:none;
     margin:0 auto;
-    display: block;
-
+    display: inline-flex;
+    text-align: center;
 }
+
 .navbar-nav > li > a{
      font-weight:300;
-
+     padding: 10px;
 }
 
 li.dropdown:hover > .dropdown-menu .divider{
   display: inline-block; 
   position: relative;
-    
-     background-color: #000;
-   width: 100%;
+  background-color: #000;
+  width: 100%;
      
 }
 ul.dropdown-menu > li > a{
- font-weight:300; 
+ font-weight:300;
+ text-align: left; 
 }
 
 ul.dropdown-cart{
@@ -78,11 +82,10 @@ ul.dropdown-cart{
 }
 ul.dropdown-cart li .item{
     display:block;
-    padding:3px 10px;
-    margin: 3px 0;
+    padding:10px 10px;
 }
 ul.dropdown-cart li .item:hover{
-    background-color:#f3f3f3;
+    background-color:;
 }
 ul.dropdown-cart li .item:after{
     visibility: hidden;
@@ -113,6 +116,20 @@ ul.dropdown-cart li .item-right button{
     margin-top:14px;
 }
 
+.item-carro{
+  position: absolute;
+  float: right;
+  right: 100px;
+}
+
+.carro{
+  position: absolute;
+  top: 0px;
+}
+
+.carro .dropdown-toggle{
+  width: 70px;
+}
 
  @media only screen and (min-width: 500px) {
   .navbar-nav > li{
@@ -215,16 +232,12 @@ ul.dropdown-menu > li > a{
 
 }
 #fondocampania .img-responsive{
-   margin: 0 auto;
+  margin: 0 auto;
   width: 45%;
-
-
-
 }
 
 #footer{ 
-   margin-top: 30px;
-  padding-top: 60px;
+  margin-top: 30px;
   width: 100%;
   width: 100vw;
   background-image: url("../images/lookbok.jpg");
@@ -236,14 +249,6 @@ ul.dropdown-menu > li > a{
   -o-background-size: cover;
   background-attachment: fixed;
   height: 350px;
-  
-  
-}
-.footer-section{
-  padding-top: 40px;
-}
-.footer-section .col-md-6{
-  width: 50%;
 }
 
 
@@ -252,24 +257,35 @@ ul.dropdown-menu > li > a{
  font-weight: 500;
  font-style: italic;
  color:#FFFFFF;
-
 }
 
 #footer li{
-
- padding-top: 10px;
- font-weight: 400;
+  padding-top: 10px;
+  font-weight: 100;
   color:#FFFFFF;
-
 }
+
 #footer i{
-
- padding-top: 10px;
- font-weight: 400;
+  padding-top: 10px;
+  font-weight: 400;
   color:#FFFFFF;
-
 }
 
+#footer a{
+  color: white;
+  text-decoration: none;
+}
+
+#footer a:hover{
+  border-bottom: 1px solid white;
+}
+
+#footer .footer-info{
+  width: 70%;
+  background: #000;
+  padding: 40px;
+  margin: 40px 0px;
+}
 
 
 
@@ -289,7 +305,6 @@ ul.dropdown-menu > li > a{
 /*---------producto*/
 
 #producto {
-  
   padding-top: 30px;
 }
 
@@ -311,9 +326,6 @@ margin-left: 10px;
 }
 }
 
-
-
-
 #producto label{
 font-weight: 300;
 font-size: 14px;
@@ -323,11 +335,6 @@ font-size: 14px;
 line-height: 24px
 font-weight: 400;
 }
-
-
-
-
-
 
 .btn-select {
     position: relative;
@@ -380,13 +387,12 @@ font-weight: 400;
 }
 
 .btn-select ul li {
-    padding: 3px 6px;
+    padding: 6px 6px;
     text-align: left;
 }
 
 .btn-select ul li:hover {
-    
-    border:#000 2px solid;
+    background:#eee;
 }
 
 .btn-select ul li.selected {
@@ -394,8 +400,8 @@ font-weight: 400;
 }
 
 /* Default Start */
-.btn-select.btn-default:hover, .btn-select.btn-default:active, .btn-select.btn-default.active {
-    border-color: #ccc;
+.btn-select .btn-default:hover, .btn-select.btn-default:active, .btn-select.btn-default.active {
+    border-color: #000;
 }
 
 .btn-select.btn-default ul li.selected {
@@ -407,18 +413,19 @@ font-weight: 400;
     border: #FFFFFF 3px solid;
 }
 
-.btn-select.btn-default:hover, .btn-select.btn-default.active {
+.btn-select .btn-default:hover, .btn-select.btn-default.active {
     background-color: #000;
-
-  border-color: #000;
+    border-color: #000;
 }
 /* El otro slide */
 .carousel .item {
-    max-height: 500px; 
     height: 100%;
     width:100%;    
 }
 
+.thumbnail a>img, .thumbnail>img{
+  border: 1px solid grey;
+}
 
   
   .thumbnail  {
@@ -463,17 +470,16 @@ font-weight: 400;
 }
 .button {
   width: 60%;
-    font-size: 1em;
-        border-radius:0;
-    text-decoration: none;
-    border: 2px solid #000;
-    padding: 0.5em 4em;
-    color: #000;
-    text-transform: uppercase;
+  font-size: 1em;
+  border-radius:0;
+  text-decoration: none;
+  border: 1px solid #000;
+  color: #000;
+  text-transform: uppercase;
   font-weight: 600;
   font-style: italic;
-  margin-left: 20px;
 }
+
 .button:hover {
     background-color: #000;
     color: #fff;
@@ -511,6 +517,7 @@ h1 {
 .form-group{
   margin-top: 10px;
 }
+
 label{
   outline: 0;
   font-size: 1.3em;
@@ -520,39 +527,53 @@ label{
 }
 .form-control{
   font-size: 1em;
-  color: #080808;
+  color: black;
   border-radius: 0;
   border: 1px solid #000;
   width: 400px;
   float: block;
   margin-bottom: 10px;
-  
+  font-weight: 100;
+}
+
+.form-control placeholder{
+
 }
 
 textarea.form-control {
+  height: 135px;
+  width: 400px;
 
-    height: 135px;
-    width: 400px;
-
-   /* margin-top: px;*/
 }
 .submit {
- float: block;
-  width: 40%;
-    font-size: 1em;
-        border-radius:0;
-    text-decoration: none;
-    border: 2px solid #000;
-    
-    color: #000;
-    text-transform: uppercase;
+  float: block;
+  font-size: 1em;
+  border-radius:0;
+  text-decoration: none;
+  border: 2px solid #000;
+  color: #000;
+  text-transform: uppercase;
   font-weight: 600;
   font-style: italic;
+  padding: 10px 40px;
 }
+
 .submit:hover {
     background-color: #000;
     color: #fff;
 }
+
+.contacto a{
+  list-style: none;
+  color: #000;
+}
+
+.contacto a:hover{
+  border-bottom: 1px solid #aaa;
+  text-decoration: none;
+  color: #aaa;
+}
+
 @media only screen and (max-width: 500px) {
 .form-group{
   margin-top: 10px;
@@ -702,7 +723,7 @@ line-height: 2.1;
     font-size: 25px;
 }
 .content-box a:hover .content-link{
-    opacity: 0.5;
+    opacity: 0.8;
     
 }
 
@@ -758,15 +779,6 @@ line-height: 2.1;
 
 }
 
-
-
-
-
-
-
-
-
-
 /*----*/
 .galeria-item div a{
         width: 99%;
@@ -784,7 +796,6 @@ line-height: 2.1;
 
 /*lookbook*/
  #lookbook .forma{
-
   width: 80%;
   margin: auto;
 }
@@ -802,13 +813,12 @@ letter-spacing: 0.1em;
 font-size: 18px;
   font-weight: 300;
 }
-#lookbook 
 
-.carousel-inner > .item  >  img, 
-.carousel-inner > .item  > a > img{
-width: 100%;
-height: 100%; /* use this, or not */
-margin: auto;
+.forma .carousel-inner > .item  >  img, 
+.forma .carousel-inner > .item  > a > img{
+  object-fit: scale-down;
+  height: 80vh;
+  width: 100%;
 }
 .carousel-control.left {
   margin-left: -120px;
@@ -820,9 +830,39 @@ margin: auto;
   margin-right: -120px;
    color: #000;
 }
-@media only screen and (max-width: 500px) {
-  #lookbook .forma{
 
+.link-carrito{
+  color: black;
+}
+.link-carrito:hover{
+  border-bottom: 1px solid #aaa;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.color-lista{
+  display: inline-flex;
+  list-style: none;
+  padding-left: 0px;
+}
+
+.color-producto{
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+}
+
+.color-producto:hover{
+  border: 1px solid grey;
+}
+
+.color-producto:visited{
+  border: 1px solid grey;
+}
+
+@media only screen and (max-width: 500px) {
+#lookbook .forma{
   width: 80%;
   margin: auto;
 }

@@ -1,3 +1,10 @@
+<?php
+require_once("requests/_main2.php");
+
+$lookbooks = getLookbooks();
+
+?>
+
 <div class="container">
 <div class="row">
 <div class="logo ">
@@ -11,7 +18,7 @@
 
 <nav class="navbar  navbar-default ">
   <div class="container-fluid">
-    
+
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -19,22 +26,30 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-     
+
     </div>
 
- 
+
     <div class="collapse navbar-collapse" id="menu">
 
       <ul class="nav navbar-nav justify-content-center ">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Campañas  <b class="caret"></b></a>
           <ul class="dropdown-menu">
-              <li><a href="seccion-lookbook.php">Primavera/verano 2018</a></li>
+             <!--<li><a href="seccion-lookbook.php">Primavera/verano 2018</a></li>
               <li class="divider"></li>
-              <li><a href="lookbook-otonio.php">Otoño/invierno 2017</a></li>
+              <li><a href="lookbook-otonio.php">Otoño/invierno 2017</a></li>-->
+              <?php $count = 0;
+            foreach($lookbooks as $lookbook ){ ?>
+                <li><a data-lookbook="<?php echo $lookbook['id_lookbook'] ?>" href="seccion-lookbook.php?ID=<?php echo $lookbook['id_lookbook']; ?>"  class="btn-lookbook"><?php echo $lookbook['coleccion']; echo ' '; echo $lookbook['name']; ?></a></li>
+                <!-- Para que no dibuje la linea si es el ultimo item -->
+                <?php  if( $count  < ( count ($lookbooks) -1 ) ) {?>
+                    <li class="divider"></li>
+                <?php } $count++;
+            }?>
           </ul>
         </li>
-     
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop On-line  <b class="caret"></b></a>
           <ul class="dropdown-menu">
@@ -49,13 +64,13 @@
             <li><a href="seccion-carrito.php">Vestidos</a></li>
           </ul>
         </li>
-        
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nosotros  <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="nosotros.php">Quienes somos</a></li>
             <li class="divider"></li>
-            <li><a href="contacto.php">Contacto</a></li>            
+            <li><a href="contacto.php">Contacto</a></li>
           </ul>
         </li>
 
@@ -68,7 +83,7 @@
             <li><a href="atalcliente.php">Política de devolución</a></li>
             <li class="divider"></li>
             <li><a href="atalcliente.php">FAQS</a></li>
-            
+
           </ul>
         </li>
 
@@ -107,12 +122,12 @@
             </li>
           </ul>
         </li>
-      
+
 
       </ul>
-      
-      
-      
+
+
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

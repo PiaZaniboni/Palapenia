@@ -10,7 +10,7 @@ class EditView extends View {
      *
      * @return null
      */
-    public function render(Array $categories = null, Product $product = null, Array $stock = null, Array $colors= null){
+    public function render(Array $categories = null, Product $product = null, Array $arrStock = null, Array $colors= null){
 
 ?>
 
@@ -68,7 +68,18 @@ class EditView extends View {
                             Talle / Stock
                         </label><br>
                         <div class="waists">
-                                <?php var_dump($stock); ?>
+                                <?php
+
+                                foreach($arrStock as $stock){
+                                    echo " -- ";
+                                    var_dump($stock["id_color"]);
+                                    var_dump($stock["id_waist"]);
+                                    var_dump($stock["stock"]);
+                                    echo " -- ";
+                                }
+                                ?>
+
+
                                 <?php foreach($colors as $i => $color){ ?>
                                  <label for="color">
                                  <?php echo $color->getColor(); ?>

@@ -18,7 +18,7 @@ class AddView extends View {
         <?php echo REQUIRED_FIELDS_TEXT ?>
     </p>
 
-	<form action="<?php echo $this->generateURL('color', 'add') ?>" method="post">
+	<form action="<?php echo $this->generateURL('color', 'add') ?>" method="post" enctype="multipart/form-data">
 
         <fieldset>
 
@@ -33,10 +33,6 @@ class AddView extends View {
                         <input name="color" type="text" required />
                     </div>
 
-                </div>
-
-                <div class="col-md-6">
-
                     <div>
                         <label for="initial">
                             Inicial <small>(*)</small>
@@ -44,8 +40,19 @@ class AddView extends View {
                         <input name="initial" type="text" required maxlength="1" />
                     </div>
 
+                </div>
+
+                <div class="col-md-6">
+
                     <div>
-                        <input type="submit" value="Agregars" />
+                        <label for="color_image">
+                            Imagenes
+                        </label>
+                        <input name="color_image[]" type="file" multiple />
+                    </div>
+
+                    <div>
+                        <input type="submit" value="Agregar" />
                     </div>
 
                 </div>

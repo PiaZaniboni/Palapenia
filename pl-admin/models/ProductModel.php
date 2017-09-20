@@ -145,7 +145,8 @@ class ProductModel {
 			$colors[] = new Color (
 				$row['id_color'],
 				$row['color'],
-				$row['initial']
+				$row['initial'],
+				"", ""		
 			);
 		}
 		DB::free($res);

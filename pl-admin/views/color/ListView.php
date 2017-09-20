@@ -46,6 +46,9 @@ class ListView extends View {
                 <th>
                     Inicial
                 </th>
+                <th>
+                    Galer&iacute;a
+                </th>
                 <th class="border-cell">
                 	Modificar
                 </th>
@@ -63,6 +66,11 @@ class ListView extends View {
                 </td>
                 <td>
                     <?php echo $color->getInitial() ?>
+                </td>
+                <td>
+                    <a href="<?php echo $this->generateURL('color', 'edit_gallery', $color->getIdColor()) ?>">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </a>
                 </td>
                 <td class="border-cell">
                 	<a href="<?php echo $this->generateURL('color', 'edit', $color->getIdColor()) ?>">

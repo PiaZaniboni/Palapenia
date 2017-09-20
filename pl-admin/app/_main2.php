@@ -81,4 +81,24 @@ function getLookbookImage($idLookbookImage){
 	return $lookbookImage;
 }
 
+/**
+ * Get a color image saved in the database.
+ *
+ * @param integer $idLookbookImage
+ * @return array
+ */
+function getColorImage($idColorImage){
+	$sql = "SELECT * FROM color_image WHERE id_color_image = '" . $idColorImage . "'";
+	$res = query($sql);
+	$row = mysqli_fetch_assoc($res);
+	$colorImage = array(
+		"id_color_image" => $row['id_color_image'],
+		"id_color" => $row["id_color"],
+		"color_image" => $row['color_image'],
+		"type_image" => $row['type_image']
+	);
+	free($res);
+	return $colorImage;
+}
+
 ?>

@@ -179,6 +179,7 @@ li.dropdown:hover > .dropdown-menu .divider{
 
 ul.dropdown-menu > li > a{
  font-weight:300;
+ text-transform: capitalize;
 }
 
 .divider{
@@ -833,6 +834,7 @@ font-size: 18px;
 
 .link-carrito{
   color: black;
+  text-transform: capitalize;
 }
 .link-carrito:hover{
   border-bottom: 1px solid #aaa;

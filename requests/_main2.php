@@ -61,7 +61,7 @@ function getCategories(){
 }
 
 /**
- * Get all the categories saved in the database.
+ * Get a category by name saved in the database.
  *
  * @return array
  */
@@ -78,6 +78,23 @@ function getCategoryId($categoryName){
 	return $categoryId;
 }
 
+/**
+ * Get al category by ID saved in the database.
+ *
+ * @return array
+ */
+function getCategoryName($categoryId){
+	$categoryName = "";
+	$sql = "SELECT category FROM category WHERE id_category= '". $categoryId ."'";
+	$res = query($sql);
+
+	while($row = mysqli_fetch_assoc($res)){
+		$categoryName = $row['category'] ;
+	}
+
+	free($res);
+	return $categoryName;
+}
 
 /**
  * Get all the products saved in the database.
@@ -129,6 +146,32 @@ function getProductsSale(){
 	return $products;
 }
 
+/**
+ * Get product by id saved in the database.
+ *
+ * @return array
+ */
+function getProduct($idProduct){
+	$product = array();
+	$sql = "SELECT product.* FROM product WHERE id_product = '" . $idProduct . "' ";
+	$res = query($sql);
+
+	while($row = mysqli_fetch_assoc($res)){
+		$product[] = array(
+			"id_product" => $row['id_product'],
+			"id_category" => $row['id_category'],
+			"name" => $row['name'],
+			"description" => $row['description'],
+			"price" => $row['price'],
+			"price_sale" => $row['price_sale'],
+			"",
+			""
+		);
+	}
+	free($res);
+	return $product;
+}
+
 
 /**
  * Get the first image of a gallery linked to a product.
@@ -140,7 +183,7 @@ function getProductImages($idProduct){
 	$productImages = array();
 	$sql = "SELECT * FROM product_image
 		WHERE id_product = '" . $idProduct . "'
-		ORDER BY id_product_image ASC LIMIT 0, 2";
+		ORDER BY id_product_image ASC LIMIT 0, 3";
 	$res = query($sql);
 	while($row = mysqli_fetch_assoc($res)){
 		$productImages[] = array(

@@ -15,7 +15,7 @@ body {
 
 .img-responsive {
  display: flex;
-  justify-content: center; 
+  justify-content: center;
   max-width: 100%;
   }
   @media only screen and (max-width: 500px) {
@@ -31,7 +31,7 @@ body {
 
 .logo .img-responsive {
  margin: 0 auto;
- margin-bottom: 40px; 
+ margin-bottom: 40px;
  max-width: 20%;
 
 }
@@ -65,15 +65,15 @@ body {
 }
 
 li.dropdown:hover > .dropdown-menu .divider{
-  display: inline-block; 
+  display: inline-block;
   position: relative;
   background-color: #000;
   width: 100%;
-     
+
 }
 ul.dropdown-menu > li > a{
  font-weight:300;
- text-align: left; 
+ text-align: left;
 }
 
 ul.dropdown-cart{
@@ -104,7 +104,7 @@ ul.dropdown-cart li .item-left span.item-info{
     float:left;
 }
 ul.dropdown-cart li .item-left span.item-info{
-    margin-left:10px;   
+    margin-left:10px;
 }
 ul.dropdown-cart li .item-left span.item-info span{
     display:block;
@@ -151,7 +151,7 @@ ul.dropdown-cart li .item-right button{
 .navbar-nav > li {
     display: inline-block;
     float:none;
-   
+
 }
 
 
@@ -163,22 +163,22 @@ li.dropdown:hover > .dropdown-menu {
     border-radius: 0px;
     border-color: #FFFFFF;
     text-align: center;
-    
+
     margin-top: 2px;
-     
+
 }
 li.dropdown:hover > .dropdown-menu .divider{
-  display: inline-block; 
+  display: inline-block;
   position: relative;
-    
+
      background-color: #000;
    width: 80%;
-     
+
 }
 
 
 ul.dropdown-menu > li > a{
- font-weight:300; 
+ font-weight:300;
 }
 
 .divider{
@@ -202,11 +202,11 @@ ul.dropdown-menu > li > a{
   margin-right: 20%;
   margin-top: 80px;
   margin-bottom: 40px;
-  
+
 
 }
 .inicio p {
-  font-size: 18px; 
+  font-size: 18px;
   font-weight: 300;
 }
 .espacio{
@@ -226,9 +226,9 @@ ul.dropdown-menu > li > a{
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
- 
+
   height: 230px;
-  
+
 
 }
 #fondocampania .img-responsive{
@@ -236,7 +236,7 @@ ul.dropdown-menu > li > a{
   width: 45%;
 }
 
-#footer{ 
+#footer{
   margin-top: 30px;
   width: 100%;
   width: 100vw;
@@ -420,14 +420,14 @@ font-weight: 400;
 /* El otro slide */
 .carousel .item {
     height: 100%;
-    width:100%;    
+    width:100%;
 }
 
 .thumbnail a>img, .thumbnail>img{
   border: 1px solid grey;
 }
 
-  
+
   .thumbnail  {
     width: 30%;
     border-style:  none;
@@ -442,7 +442,7 @@ font-weight: 400;
   #fondocampania .img-responsive{
    margin: 0 auto;
    min-width: 350px;
-  
+
 }
   .thumbnail  {
    display: none;
@@ -460,12 +460,12 @@ font-weight: 400;
     padding: 0;
     margin: 0;
     border: 0;
-    
+
 }
 .nombre-producto{
   font-size: 20px;
   font-weight:300;
- letter-spacing: 0.2em; 
+ letter-spacing: 0.2em;
 
 }
 .button {
@@ -484,7 +484,7 @@ font-weight: 400;
     background-color: #000;
     color: #fff;
 }
- 
+
 /* Animation delays */
 .carousel-caption h3:first-child {
     animation-delay: 1s;
@@ -497,7 +497,7 @@ font-weight: 400;
 }
 
 h1 {
-  text-align: center;  
+  text-align: center;
   margin-bottom: 30px;
   font-size: 30px;
   font-weight: bold;
@@ -523,7 +523,7 @@ label{
   font-size: 1.3em;
   line-height: 1em;
   font-weight: normal;
-  
+
 }
 .form-control{
   font-size: 1em;
@@ -588,7 +588,7 @@ textarea.form-control {
   width: 300px;
   float: block;
   margin-bottom: 10px;
-  
+
 }
 textarea.form-control {
 
@@ -605,7 +605,7 @@ textarea.form-control {
         border-radius:0;
     text-decoration: none;
     border: 2px solid #000;
-    
+
     color: #000;
     text-transform: uppercase;
   font-weight: 600;
@@ -618,7 +618,7 @@ textarea.form-control {
 
   }
 
- 
+
 /*---------formulario*/
 
 /*---------shopping*/
@@ -627,18 +627,18 @@ textarea.form-control {
 
 
 #listacompra p{
-  
+
 font-weight:300;
 
- letter-spacing: 0.2em; 
-
+ letter-spacing: 0.2em;
+ text-transform: capitalize; /*--------- agregue esto */
 
 }
 #listacompra h3{
-  
+
 font-weight:600;
 font-style: italic;
-line-height: 2.1; 
+line-height: 2.1;
 
 
 }
@@ -654,19 +654,19 @@ line-height: 2.1;
 
 .table-responsive .submit {
 
- 
+
  float: block;
   width: 90%;
     font-size: 1em;
         border-radius:0;
     text-decoration: none;
     border: 1px solid #000;
-    
+
     color: #000;
     text-transform: uppercase;
   font-weight: 600;
   font-style: italic;
-  
+
 }
 .table-responsive .submit:hover {
     background-color: #000;
@@ -701,7 +701,7 @@ line-height: 2.1;
     color: #000;
     font-size: 18px;
     font-weight: 700;
-    
+
     position: relative;
 }
 .content-link{
@@ -714,8 +714,8 @@ line-height: 2.1;
     padding: 25% 0;
     line-height: 45px;
     background: #FFFFFF;
-    
-    
+
+
     transition: all 0.6s;
 }
 .content-link i{
@@ -724,25 +724,25 @@ line-height: 2.1;
 }
 .content-box a:hover .content-link{
     opacity: 0.8;
-    
+
 }
 
 @media only screen and (max-width: 500px) {
- 
+
  .content-box {
   width: 65%;
   height: auto;
   display: inline-grid;
   margin-left: 10%;
   margin-right: 20%;
-  
-   
+
+
     overflow: hidden;
 }
 
   .content-box .img-responsive{
- 
-  
+
+
        -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -755,12 +755,12 @@ line-height: 2.1;
 
 }
 .content-box a{
-   
+
     color: #000;
     font-size: 10px;
     font-weight: 700;
-    
-   
+
+
 }
 .content-link{
     position: block;
@@ -769,11 +769,11 @@ line-height: 2.1;
     opacity: 0;
     width:  100%;
     height: 100%;
-    
+
     line-height: 20px;
     background: #FFFFFF;
-  
-    
+
+
     transition: all 0.6s;
 }
 
@@ -805,7 +805,7 @@ margin-bottom: 60px;
 }
 
 #lookbook h4{
-letter-spacing: 0.1em; 
+letter-spacing: 0.1em;
   font-weight: 600;
 }
 #lookbook p{
@@ -814,7 +814,7 @@ font-size: 18px;
   font-weight: 300;
 }
 
-.forma .carousel-inner > .item  >  img, 
+.forma .carousel-inner > .item  >  img,
 .forma .carousel-inner > .item  > a > img{
   object-fit: scale-down;
   height: 80vh;
@@ -879,7 +879,7 @@ font-size: 18px;
 }
 
 /*----*/
-#atcliente{ 
+#atcliente{
    margin-top: 30px;
   padding-top: 60px;
   width: 100%;
@@ -893,8 +893,8 @@ font-size: 18px;
   -o-background-size: cover;
   background-attachment: fixed;
   height: 500px;
-  
-  
+
+
 }
  .pasos{
    margin: 0 auto;
@@ -902,7 +902,7 @@ font-size: 18px;
 
 }
 .cambio h4{
-letter-spacing: 0.1em; 
+letter-spacing: 0.1em;
   font-weight: 600;
 }
 .cambio p{
@@ -916,7 +916,7 @@ font-size: 18px;
   width: 70%;
 }
 @media only screen and (max-width: 500px) {
-  #atcliente{ 
+  #atcliente{
    margin-top: 10px;
   padding-top: 60px;
   width: 100%;
@@ -930,7 +930,7 @@ font-size: 18px;
   -o-background-size: cover;
   background-attachment: fixed;
   height: 350px;
- 
+
 }
   .pasos{
    margin: 0 auto;
@@ -938,7 +938,7 @@ font-size: 18px;
 
 }
 .cambio h4{
-letter-spacing: 0.1em; 
+letter-spacing: 0.1em;
   font-weight: 600;
 }
 .cambio p{
@@ -986,7 +986,7 @@ font-size: 18px;
 .contacto li{
 
  padding-top: 15px;
- 
+
   color:#000;
 
 }
@@ -1000,7 +1000,7 @@ font-size: 18px;
 @media only screen and (max-width: 500px) {
 
   #nosotros h2{
-  
+
   text-align: left;
 font-size: 30px;
   font-weight: 400;
@@ -1043,4 +1043,3 @@ thead{
    border-left: none;
 
 }
-

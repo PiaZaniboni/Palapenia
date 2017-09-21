@@ -42,13 +42,51 @@ function free($res){
 }
 
 /**
+ * Get all the categories saved in the database.
+ *
+ * @return array
+ */
+function getCategories(){
+	$categories = array();
+	$sql = "SELECT * FROM category ORDER BY id_category ASC";
+	$res = query($sql);
+	while($row = mysqli_fetch_assoc($res)){
+		$categories[] = array(
+			"id_category" => $row['id_category'],
+			"category" => $row['category']
+		);
+	}
+	free($res);
+	return $categories;
+}
+
+/**
+ * Get all the categories saved in the database.
+ *
+ * @return array
+ */
+function getCategoryId($categoryName){
+	$categoryId = 0;
+	$sql = "SELECT id_category FROM category WHERE category= '". $categoryName ."'";
+	$res = query($sql);
+
+	while($row = mysqli_fetch_assoc($res)){
+		$categoryId = $row['id_category'] ;
+	}
+
+	free($res);
+	return $categoryId;
+}
+
+
+/**
  * Get all the products saved in the database.
  *
  * @return array
  */
-function getProducts($idSubcategory){
+function getProducts($idCategory){
 	$products = array();
-	$sql = "SELECT product.* FROM product NATURAL JOIN pr_ca_su_wa_st WHERE id_subcategory = '" . $idSubcategory . "' AND (price_sale = 0 OR price_sale = null OR price_sale = '') GROUP BY id_product";
+	$sql = "SELECT product.* FROM product NATURAL JOIN pr_ca_wa_co_st WHERE id_category = '" . $idCategory . "' GROUP BY id_product";
 	$res = query($sql);
 
 	while($row = mysqli_fetch_assoc($res)){
@@ -68,6 +106,31 @@ function getProducts($idSubcategory){
 }
 
 /**
+ * Get all the products Sale saved in the database.
+ *
+ * @return array
+ */
+function getProductsSale(){
+	$products = array();
+	$sql = "SELECT product.* FROM product NATURAL JOIN pr_ca_wa_co_st WHERE (price_sale != 0 OR price_sale != null OR price_sale != '') GROUP BY id_product";
+	$res = query($sql);
+
+	while($row = mysqli_fetch_assoc($res)){
+		$products[] = array(
+			"id_product" => $row['id_product'],
+			"id_category" => $row['id_category'],
+			"name" => $row['name'],
+			"description" => $row['description'],
+			"price" => $row['price'],
+			"price_sale" => $row['price_sale']
+		);
+	}
+	free($res);
+	return $products;
+}
+
+
+/**
  * Get the first image of a gallery linked to a product.
  *
  * @param integer $idProduct
@@ -77,7 +140,7 @@ function getProductImages($idProduct){
 	$productImages = array();
 	$sql = "SELECT * FROM product_image
 		WHERE id_product = '" . $idProduct . "'
-		ORDER BY id_product_image DESC LIMIT 0, 2";
+		ORDER BY id_product_image ASC LIMIT 0, 2";
 	$res = query($sql);
 	while($row = mysqli_fetch_assoc($res)){
 		$productImages[] = array(
@@ -114,6 +177,7 @@ function getLookbooks(){
 	free($res);
 	return $lookbooks;
 }
+
 
 /**
  * Get all the images of a gallery linked to a lookbook.

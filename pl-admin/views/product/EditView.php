@@ -72,8 +72,11 @@ class EditView extends View {
 
                                 foreach($arrStock as $stock){
                                     echo " -- ";
+                                    echo "color ";
                                     var_dump($stock["id_color"]);
+                                    echo "waist ";
                                     var_dump($stock["id_waist"]);
+                                    echo "stock  ";
                                     var_dump($stock["stock"]);
                                     echo " -- ";
                                 }

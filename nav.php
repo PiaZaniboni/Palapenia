@@ -2,6 +2,7 @@
 require_once("requests/_main2.php");
 
 $lookbooks = getLookbooks();
+$categories = getCategories();
 
 ?>
 
@@ -53,15 +54,22 @@ $lookbooks = getLookbooks();
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop On-line  <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="seccion-carrito.php">SALE</a></li>
+            <li><a href="seccion-carrito.php?cat=sale">SALE</a></li>
             <li class="divider"></li>
-            <li><a href="seccion-carrito.php">Top</a></li>
+            <!--<li><a href="seccion-carrito.php">Top</a></li>
             <li class="divider"></li>
             <li><a href="seccion-carrito.php">Bottom</a></li>
              <li class="divider "></li>
             <li><a href="seccion-carrito.php">Abrigos</a></li>
             <li class="divider"></li>
-            <li><a href="seccion-carrito.php">Vestidos</a></li>
+            <li><a href="seccion-carrito.php">Vestidos</a></li>-->
+            <?php $countC = 0;
+            foreach($categories as $category ){ ?>
+                <li><a href="seccion-carrito.php?cat=<?php echo strtolower($category['category']); ?>"><?php echo $category['category']; ?></a></li>
+                <?php  if( $countC  < ( count ($categories) -1 ) ) {?>
+                    <li class="divider"></li>
+                <?php } $countC++;
+              }?>
           </ul>
         </li>
 

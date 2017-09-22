@@ -15,7 +15,7 @@ body {
 
 .img-responsive {
  display: flex;
-  justify-content: center;
+  justify-content: center; 
   max-width: 100%;
   }
   @media only screen and (max-width: 500px) {
@@ -31,7 +31,7 @@ body {
 
 .logo .img-responsive {
  margin: 0 auto;
- margin-bottom: 40px;
+ margin-bottom: 40px; 
  max-width: 20%;
 
 }
@@ -65,15 +65,15 @@ body {
 }
 
 li.dropdown:hover > .dropdown-menu .divider{
-  display: inline-block;
+  display: inline-block; 
   position: relative;
   background-color: #000;
   width: 100%;
-
+     
 }
 ul.dropdown-menu > li > a{
  font-weight:300;
- text-align: left;
+ text-align: left; 
 }
 
 ul.dropdown-cart{
@@ -104,7 +104,7 @@ ul.dropdown-cart li .item-left span.item-info{
     float:left;
 }
 ul.dropdown-cart li .item-left span.item-info{
-    margin-left:10px;
+    margin-left:10px;   
 }
 ul.dropdown-cart li .item-left span.item-info span{
     display:block;
@@ -151,7 +151,7 @@ ul.dropdown-cart li .item-right button{
 .navbar-nav > li {
     display: inline-block;
     float:none;
-
+   
 }
 
 
@@ -163,23 +163,22 @@ li.dropdown:hover > .dropdown-menu {
     border-radius: 0px;
     border-color: #FFFFFF;
     text-align: center;
-
+    
     margin-top: 2px;
-
+     
 }
 li.dropdown:hover > .dropdown-menu .divider{
-  display: inline-block;
+  display: inline-block; 
   position: relative;
-
+    
      background-color: #000;
    width: 80%;
-
+     
 }
 
 
 ul.dropdown-menu > li > a{
- font-weight:300;
- text-transform: capitalize;
+ font-weight:300; 
 }
 
 .divider{
@@ -203,11 +202,11 @@ ul.dropdown-menu > li > a{
   margin-right: 20%;
   margin-top: 80px;
   margin-bottom: 40px;
-
+  
 
 }
 .inicio p {
-  font-size: 18px;
+  font-size: 18px; 
   font-weight: 300;
 }
 .espacio{
@@ -217,7 +216,7 @@ ul.dropdown-menu > li > a{
 #fondocampania{
   margin-top: 30px;
   padding-top: 60px;
-   margin-bottom: 60px;
+  margin-bottom: 60px;
   width: 100%;
   width: 100vw;
   background-image: url("../images/2.jpg");
@@ -227,17 +226,48 @@ ul.dropdown-menu > li > a{
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-
   height: 230px;
-
-
 }
+
 #fondocampania .img-responsive{
   margin: 0 auto;
   width: 45%;
 }
 
-#footer{
+ #fondovideo{
+  margin-top: 30px;
+  padding-top: 60px;
+  margin-bottom: 60px;
+  width: 100%;
+  width: 100vw;
+  background: white;
+  height: 500px;
+ }
+
+ .video-index .btn.focus, .btn:focus, .btn:hover{
+  color: #fff;
+ }
+
+ .video-index a:focus{
+  outline: none;
+ }
+
+.portadavideo:hover{
+  opacity: 0.8;
+}
+
+.texto-index{
+  font-weight: 100;
+  text-align: left;
+  font-size: 3em;
+  padding-top: 100px;
+}
+
+
+
+/*-----footer-----*/
+
+#footer{ 
   margin-top: 30px;
   width: 100%;
   width: 100vw;
@@ -288,9 +318,6 @@ ul.dropdown-menu > li > a{
   margin: 40px 0px;
 }
 
-
-
-
 /*---------home*/
 
 /*slider */
@@ -305,6 +332,22 @@ ul.dropdown-menu > li > a{
 
 /*---------producto*/
 
+.zoom img{
+-webkit-transition:all .7s ease; /* Safari y Chrome */
+-moz-transition:all .7s ease; /* Firefox */
+-o-transition:all .7s ease; /* IE 9 */
+-ms-transition:all .7s ease; /* Opera */
+width:100%;
+}
+
+.zoom:hover img{
+-webkit-transform:scale(1.2);
+-moz-transform:scale(1.2);
+-ms-transform:scale(1.2);
+-o-transform:scale(1.2);
+transform:scale(1.2);
+}
+
 #producto {
   padding-top: 30px;
 }
@@ -313,13 +356,17 @@ ul.dropdown-menu > li > a{
 #producto .abajo{
  margin-bottom: 30px;
  margin-top: 30px;
-
 }
 
 #producto h4{
  font-weight: 700;
 
 }
+
+.form-horizontal .control-label{
+  text-align: none;
+}
+
 @media only screen and (min-width: 500px) {
    #producto i{
 margin-left: 10px;
@@ -421,14 +468,14 @@ font-weight: 400;
 /* El otro slide */
 .carousel .item {
     height: 100%;
-    width:100%;
+    width:100%;    
 }
 
 .thumbnail a>img, .thumbnail>img{
   border: 1px solid grey;
 }
 
-
+  
   .thumbnail  {
     width: 30%;
     border-style:  none;
@@ -443,7 +490,7 @@ font-weight: 400;
   #fondocampania .img-responsive{
    margin: 0 auto;
    min-width: 350px;
-
+  
 }
   .thumbnail  {
    display: none;
@@ -461,12 +508,12 @@ font-weight: 400;
     padding: 0;
     margin: 0;
     border: 0;
-
+    
 }
 .nombre-producto{
   font-size: 20px;
   font-weight:300;
- letter-spacing: 0.2em;
+ letter-spacing: 0.2em; 
 
 }
 .button {
@@ -485,7 +532,7 @@ font-weight: 400;
     background-color: #000;
     color: #fff;
 }
-
+ 
 /* Animation delays */
 .carousel-caption h3:first-child {
     animation-delay: 1s;
@@ -498,7 +545,7 @@ font-weight: 400;
 }
 
 h1 {
-  text-align: center;
+  text-align: center;  
   margin-bottom: 30px;
   font-size: 30px;
   font-weight: bold;
@@ -524,7 +571,7 @@ label{
   font-size: 1.3em;
   line-height: 1em;
   font-weight: normal;
-
+  
 }
 .form-control{
   font-size: 1em;
@@ -533,12 +580,7 @@ label{
   border: 1px solid #000;
   width: 400px;
   float: block;
-  margin-bottom: 10px;
   font-weight: 100;
-}
-
-.form-control placeholder{
-
 }
 
 textarea.form-control {
@@ -589,7 +631,7 @@ textarea.form-control {
   width: 300px;
   float: block;
   margin-bottom: 10px;
-
+  
 }
 textarea.form-control {
 
@@ -600,15 +642,14 @@ textarea.form-control {
 }
 .submit {
   margin-left: 5px;
- float: block;
+  float: block;
   width: 40%;
-    font-size: 1em;
-        border-radius:0;
-    text-decoration: none;
-    border: 2px solid #000;
-
-    color: #000;
-    text-transform: uppercase;
+  font-size: 1em;
+  border-radius:0;
+  text-decoration: none;
+  border: 2px solid #000;
+  color: #000;
+  text-transform: uppercase;
   font-weight: 600;
   font-style: italic;
 }
@@ -619,7 +660,7 @@ textarea.form-control {
 
   }
 
-
+ 
 /*---------formulario*/
 
 /*---------shopping*/
@@ -628,18 +669,18 @@ textarea.form-control {
 
 
 #listacompra p{
-
+  
 font-weight:300;
 
- letter-spacing: 0.2em;
- text-transform: capitalize; /*--------- agregue esto */
+ letter-spacing: 0.2em; 
+
 
 }
 #listacompra h3{
-
+  
 font-weight:600;
 font-style: italic;
-line-height: 2.1;
+line-height: 2.1; 
 
 
 }
@@ -655,19 +696,19 @@ line-height: 2.1;
 
 .table-responsive .submit {
 
-
+ 
  float: block;
   width: 90%;
     font-size: 1em;
         border-radius:0;
     text-decoration: none;
     border: 1px solid #000;
-
+    
     color: #000;
     text-transform: uppercase;
   font-weight: 600;
   font-style: italic;
-
+  
 }
 .table-responsive .submit:hover {
     background-color: #000;
@@ -702,7 +743,7 @@ line-height: 2.1;
     color: #000;
     font-size: 18px;
     font-weight: 700;
-
+    
     position: relative;
 }
 .content-link{
@@ -715,8 +756,8 @@ line-height: 2.1;
     padding: 25% 0;
     line-height: 45px;
     background: #FFFFFF;
-
-
+    
+    
     transition: all 0.6s;
 }
 .content-link i{
@@ -725,25 +766,25 @@ line-height: 2.1;
 }
 .content-box a:hover .content-link{
     opacity: 0.8;
-
+    
 }
 
 @media only screen and (max-width: 500px) {
-
+ 
  .content-box {
   width: 65%;
   height: auto;
   display: inline-grid;
   margin-left: 10%;
   margin-right: 20%;
-
-
+  
+   
     overflow: hidden;
 }
 
   .content-box .img-responsive{
-
-
+ 
+  
        -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -756,12 +797,12 @@ line-height: 2.1;
 
 }
 .content-box a{
-
+   
     color: #000;
     font-size: 10px;
     font-weight: 700;
-
-
+    
+   
 }
 .content-link{
     position: block;
@@ -770,11 +811,11 @@ line-height: 2.1;
     opacity: 0;
     width:  100%;
     height: 100%;
-
+    
     line-height: 20px;
     background: #FFFFFF;
-
-
+  
+    
     transition: all 0.6s;
 }
 
@@ -806,7 +847,7 @@ margin-bottom: 60px;
 }
 
 #lookbook h4{
-letter-spacing: 0.1em;
+letter-spacing: 0.1em; 
   font-weight: 600;
 }
 #lookbook p{
@@ -815,7 +856,7 @@ font-size: 18px;
   font-weight: 300;
 }
 
-.forma .carousel-inner > .item  >  img,
+.forma .carousel-inner > .item  >  img, 
 .forma .carousel-inner > .item  > a > img{
   object-fit: scale-down;
   height: 80vh;
@@ -834,7 +875,6 @@ font-size: 18px;
 
 .link-carrito{
   color: black;
-  text-transform: capitalize;
 }
 .link-carrito:hover{
   border-bottom: 1px solid #aaa;
@@ -853,9 +893,6 @@ font-size: 18px;
   height: 40px;
   border: 1px solid #ccc;
   margin-left: 10px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .color-producto:hover{
@@ -864,6 +901,11 @@ font-size: 18px;
 
 .color-producto:visited{
   border: 1px solid grey;
+}
+
+.cantidad-producto{
+  width: 40px;
+  margin-left: 10px;
 }
 
 @media only screen and (max-width: 500px) {
@@ -884,7 +926,7 @@ font-size: 18px;
 }
 
 /*----*/
-#atcliente{
+#atcliente{ 
    margin-top: 30px;
   padding-top: 60px;
   width: 100%;
@@ -898,8 +940,8 @@ font-size: 18px;
   -o-background-size: cover;
   background-attachment: fixed;
   height: 500px;
-
-
+  
+  
 }
  .pasos{
    margin: 0 auto;
@@ -907,7 +949,7 @@ font-size: 18px;
 
 }
 .cambio h4{
-letter-spacing: 0.1em;
+letter-spacing: 0.1em; 
   font-weight: 600;
 }
 .cambio p{
@@ -921,7 +963,7 @@ font-size: 18px;
   width: 70%;
 }
 @media only screen and (max-width: 500px) {
-  #atcliente{
+  #atcliente{ 
    margin-top: 10px;
   padding-top: 60px;
   width: 100%;
@@ -935,7 +977,7 @@ font-size: 18px;
   -o-background-size: cover;
   background-attachment: fixed;
   height: 350px;
-
+ 
 }
   .pasos{
    margin: 0 auto;
@@ -943,7 +985,7 @@ font-size: 18px;
 
 }
 .cambio h4{
-letter-spacing: 0.1em;
+letter-spacing: 0.1em; 
   font-weight: 600;
 }
 .cambio p{
@@ -991,7 +1033,7 @@ font-size: 18px;
 .contacto li{
 
  padding-top: 15px;
-
+ 
   color:#000;
 
 }
@@ -1005,7 +1047,7 @@ font-size: 18px;
 @media only screen and (max-width: 500px) {
 
   #nosotros h2{
-
+  
   text-align: left;
 font-size: 30px;
   font-weight: 400;
@@ -1048,3 +1090,4 @@ thead{
    border-left: none;
 
 }
+

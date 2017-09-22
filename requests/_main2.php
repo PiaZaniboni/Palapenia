@@ -183,7 +183,7 @@ function getProductImages($idProduct){
 	$productImages = array();
 	$sql = "SELECT * FROM product_image
 		WHERE id_product = '" . $idProduct . "'
-		ORDER BY id_product_image ASC LIMIT 0, 3";
+		ORDER BY id_product_image ASC LIMIT 0, 1";
 	$res = query($sql);
 	while($row = mysqli_fetch_assoc($res)){
 		$productImages[] = array(
@@ -195,6 +195,90 @@ function getProductImages($idProduct){
 	}
 	free($res);
 	return $productImages;
+}
+
+/**
+ * Get the first image of a gallery linked to a product.
+ *
+ * @param integer $idProduct
+ * @return array
+ */
+function getProductGallery($idProduct){
+	$gallery = array();
+	$sql = "SELECT * FROM product_image
+		WHERE id_product = '" . $idProduct . "'
+		ORDER BY id_product_image ASC LIMIT 0, 3";
+	$res = query($sql);
+	while($row = mysqli_fetch_assoc($res)){
+		$gallery[] = array(
+			"id_product_image" => $row['id_product_image'],
+			"id_product" => $row["id_product"],
+			"product_image" => base64_encode($row['product_image']),
+			"type_image" => $row['type_image']
+		);
+	}
+	free($res);
+	return $gallery;
+}
+
+/**
+ * Get the stock saved in the database.
+ *
+ * @return array
+ */
+
+function getStockProduct($idProduct){
+	$stock = array();
+	$sql = "SELECT * FROM pr_ca_wa_co_st WHERE id_product = '" . $idProduct . "' AND stock != 0 ORDER BY id_color ASC";
+	$res = query($sql);
+	while($row = mysqli_fetch_assoc($res)){
+		$stock[] = array(
+			"id_product" => $row['id_product'],
+			"id_category" => $row['id_category'],
+			"id_waist" => $row['id_waist'],
+			"id_color" => ($row["id_color"]),
+			"stock" => $row['stock']
+		);
+	}
+	free($res);
+	return $stock;
+}
+
+/**
+ * Get the stock saved in the database.
+ *
+ * @return array
+ */
+
+function getColors(){
+	$colors = array();
+	$sql = "SELECT * FROM color ORDER BY id_color ASC";
+	$res = query($sql);
+	while($row = mysqli_fetch_assoc($res)){
+		$colors[] = array(
+			"id_color" => $row['id_color'],
+			"color" => $row['color'],
+			"initial" => $row['initial']
+		);
+	}
+	free($res);
+	return $colors;
+}
+
+function getColorImage($idColor){
+	$colorImage = array();
+	$sql = "SELECT * FROM color_image WHERE id_color = '" . $idColor . "' ORDER BY id_color ASC";
+	$res = query($sql);
+	while($row = mysqli_fetch_assoc($res)){
+		$colorImage[] = array(
+			"id_color_image" => $row['id_color_image'],
+			"id_color" => $row["id_color"],
+			"color_image" => base64_encode($row['color_image']),
+			"type_image" => $row['type_image']
+		);
+	}
+	free($res);
+	return $colorImage;
 }
 
 /**

@@ -853,6 +853,9 @@ font-size: 18px;
   height: 40px;
   border: 1px solid #ccc;
   margin-left: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .color-producto:hover{

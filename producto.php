@@ -32,27 +32,64 @@
                   <i class="glyphicon glyphicon-shopping-cart"></i>
                 </span>
               </div>
+              <?php $stock = getStockProduct($idProducto);
+                    $colors = getColors();
+                    //echo '<pre>';
+                    //var_dump($stock);
+                    //echo '</pre>';
+
+                    echo '</br>';
+                    foreach ($stock as $st) {
+                        foreach ($colors as $color) {
+                            if( $st['id_color'] === $color['id_color'] ){
+                                //echo $st['id_waist'];
+                                //echo " - ";
+                                //echo $color['color'];
+                                //echo " - ";
+                            }
+                        }
+                    }
+                    echo '</br>';
+                    foreach ($stock as $st) {
+                        foreach ($colors as $color) {
+                            if( $st['id_color'] === $color['id_color'] ){
+                                //echo $st['stock'];
+                                //echo " - ";
+                                //echo $color['color'];
+                                //echo " - ";
+                            }
+                        }
+                    }
+
+
+
+              ?>
               <div class="col-5 col-sm-5">
                 <form class="form-horizontal">
                   <div class="form-group">
                     <label class=" col-sm-4 control-label">COLOR</label>
                     <div class="col-sm-8">
                       <ul class="color-lista">
-                      <li>
-                        <div class="color-producto">
-                          color
-                        </div>
-                      </li>
-                      <li>
-                        <div class="color-producto">
-                          color
-                        </div>
-                      </li>
-                      <li>
-                        <div class="color-producto">
-                          color
-                        </div>
-                      </li>
+                          <?php
+                          foreach ($colors as $color) { $count = 0;
+                          foreach ($stock as $st) {
+                                  if( ( $st['id_color'] === $color['id_color'] ) && $count == 0 ){
+                                      $colorImage = getColorImage( $st['id_color'] );
+                                      $imageData = $colorImage[0]['color_image'];
+                                      $fileinfo = $colorImage[0]['type_image'];
+                                      $src = 'data: '.$fileinfo.';base64,'.$imageData;
+
+                                       ?>
+                                      <li>
+                                        <div class="color-producto" data-id-color="<?php echo $st['id_color']; ?>" style="background-image:url('<?php echo $src;?>')">
+                                          <?php //echo $color['color'];?>
+                                        </div>
+
+                                      </li>
+                                  <?php $count++;}
+                              }
+                          }
+                           ?>
                       </ul>
                     </div>
                     <label class=" col-sm-4 control-label">TALLES</label>
@@ -89,7 +126,7 @@
                             <div class="slide" id="myCarousel3">
                                 <!-- Carousel items -->
                                 <div class="carousel-inner ">
-                                    <?php $productImages = getProductImages( $producto[0]['id_product'] );
+                                    <?php $productImages = getProductGallery( $producto[0]['id_product'] );
                                           $count = 0;
                                           foreach( $productImages as $productImage ){
                                               $imageData = $productImage['product_image'];

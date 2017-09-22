@@ -66,6 +66,16 @@ $(document).ready(function () {
             });
 
         });
+
+        /*--------------------------------------------------------------
+        ## Seleccion color
+        --------------------------------------------------------------*/
+        $(".color-producto").click(function(){
+            console.log("ALOJA");
+            $(".color-producto").removeClass("selected");
+            $(this).addClass("selected");
+        });
+
 });
 
 $(document).on('click', '.btn-select', function (e) {

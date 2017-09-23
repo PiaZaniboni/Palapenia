@@ -71,11 +71,16 @@ $(document).ready(function () {
         ## Seleccion color
         --------------------------------------------------------------*/
         $(".color-producto").click(function(){
-            console.log("ALOJA");
+            var selectColor = $(this).attr('data-id-color')
+            console.log(selectColor );
             $(".color-producto").removeClass("selected");
             $(this).addClass("selected");
-        });
+            $('.select-talle').fadeOut();
+            $('.talle-' + selectColor).fadeIn();
 
+            //Reseamos stock
+            $('#stock-producto').val(1);
+        });
 });
 
 $(document).on('click', '.btn-select', function (e) {
@@ -88,9 +93,20 @@ $(document).on('click', '.btn-select', function (e) {
             var value = target.html();
             $(this).find(".btn-select-input").val(value);
             $(this).find(".btn-select-value").html(value);
+            //Stock por talle
+            var idTalleColor = target.attr('data-id-color');
+            var idTalle = target.attr('data-id-talle');
+
+            $(".stock-oculto").removeClass("talleMax");
+            $(".co-"+idTalleColor+"-tl-"+idTalle).addClass("talleMax");
+            var valorMaximoStock = $(".co-"+idTalleColor+"-tl-"+idTalle).attr("data-max-stock");
+            $('#stock-producto').val(1);
+             $("#stock-producto").attr('max', valorMaximoStock );
+            console.log( valorMaximoStock  );
         }
         ul.hide();
         $(this).removeClass("active");
+
     }
     else {
         $('.btn-select').not(this).each(function () {

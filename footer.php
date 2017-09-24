@@ -4,9 +4,11 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/principal.js"></script>
     <script src="https://use.fontawesome.com/e71eeac67c.js"></script>
-    <script type="text/javascript" src="js/wow.js"></script> 
-    <!--Cookies-->
-    <script type="text/javascript" src="js/js.cookie.js"></script>
+    <script type="text/javascript" src="js/wow.js"></script>
+
     <script>
               new WOW().init();
-              </script>
+    </script>
+
+    <!--Cookies-->
+    <script type="text/javascript" src="js/js.cookie.js"></script>

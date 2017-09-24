@@ -72,7 +72,7 @@ $(document).ready(function () {
         --------------------------------------------------------------*/
         $(".color-producto").click(function(){
             var selectColor = $(this).attr('data-id-color')
-            console.log(selectColor );
+            //console.log(selectColor );
             $(".color-producto").removeClass("selected");
             $(this).addClass("selected");
             $('.select-talle').fadeOut();
@@ -80,6 +80,81 @@ $(document).ready(function () {
 
             //Reseamos stock
             $('#stock-producto').val(1);
+        });
+
+        $(document).on('click', '.btn-comprar', function(){
+            var colorSelecciono = $(this).parent().find('.col-color').find('.color-lista').find('.selected').attr('data-name-color');
+            var waistSelecciono = $(this).parent().find('.col-talle').find('.select-talle').find('.selected').attr('data-talle');
+            var stockSelecciono = $(this).parent().find('#stock-producto').attr('value');
+            var productPrice = $(this).parent().find('.producto-price').attr('data-price');
+            var total = 0;
+            var idProduct = $(this).parent().attr('data-product');
+
+
+            console.log( "Id producto " + idProduct );
+            console.log( "Color producto " + colorSelecciono );
+            console.log( "Talle producto " + waistSelecciono );
+            console.log( "Stock producto " + stockSelecciono );
+            console.log ( "Producto Precio " + productPrice );
+
+            if(Cookies.get(idProduct) !== undefined){
+
+                var productCookies = Cookies.get(idProduct);
+
+                console.log(JSON.parse(productCookies));
+
+                var colorCookies = JSON.parse(productCookies).color;
+                var waistCookies = JSON.parse(productCookies).waist;
+                var quantityCookies = JSON.parse(productCookies).quantity;
+
+                console.log(colorCookies);
+                console.log(waistCookies);
+                console.log(quantityCookies);
+
+                console.log(waistCookies.indexOf(waistSelecciono));
+
+                if(waistCookies.indexOf(waistSelecciono) >= 0){
+                    var indexWaist = waistCookies.indexOf(waistSelecciono);
+
+                    colorCookies[indexWaist] = colorSelecciono;
+                    quantityCookies[indexWaist] = stockSelecciono;
+                } else {
+                    waistCookies.push(waistSelecciono);
+                    colorCookies.push(colorSelecciono);
+                    quantityCookies.push(stockSelecciono);
+                }
+
+                console.log(waistCookies);
+                console.log(colorCookies);
+                console.log(quantityCookies);
+
+                $.each(quantityCookies, function(k, v){
+                    total += productPrice * v;
+                });
+
+                if(total > 0){
+                    var product = { waist: waistCookies, color: colorCookies, quantity: quantityCookies, total: total };
+                    Cookies.set( idProduct , JSON.stringify(product), { expires: 0.250 });
+
+                    var cookiesall = Cookies.get();
+                    console.log("viejo", cookiesall);
+                }
+
+            } else {
+                total = productPrice * stockSelecciono;
+
+                if(total > 0){
+                    var product = { /*id_product: idProduct,*/ waist: waistSelecciono.split(), color: colorSelecciono.split(), quantity: stockSelecciono.split(), total: total };
+                    //var idCompra = Date.now();
+                    //console.log(idCompra);
+                    Cookies.set( idProduct , JSON.stringify(product), { expires: 0.250 });
+
+                    var cookiesall = Cookies.get();
+                    console.log("nuevo", cookiesall);
+                }
+            }
+
+            setTimeout(function(){ window.location="lista-compra.php"; }, 1000);
         });
 });
 
@@ -102,7 +177,7 @@ $(document).on('click', '.btn-select', function (e) {
             var valorMaximoStock = $(".co-"+idTalleColor+"-tl-"+idTalle).attr("data-max-stock");
             $('#stock-producto').val(1);
              $("#stock-producto").attr('max', valorMaximoStock );
-            console.log( valorMaximoStock  );
+            //console.log( valorMaximoStock  );
         }
         ul.hide();
         $(this).removeClass("active");

@@ -1,12 +1,3 @@
-<?php
-
-require_once("requests/mercadopago.php");
-$mp = new MP('7496372446970436', 'SrprMUznB8ZQx7tqZVkx120iqQCHaJrk');
-
-//require_once("requests/_main2.php");
-
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -29,9 +20,22 @@ $mp = new MP('7496372446970436', 'SrprMUznB8ZQx7tqZVkx120iqQCHaJrk');
 
 
         <?php
-        if(count($_COOKIE) > 0){
+        if(count($_COOKIE) > 0 ){
+            $productosPosta = false;
+            foreach($_COOKIE as $idProducto => $element){
+                if(is_int($idProducto)){
+                    $productosPosta = true;
+                }
+            }
+        }
 
+        if(count($_COOKIE) > 0 && $productosPosta == true){
+
+            require_once("requests/mercadopago.php");
+            $mp = new MP('7496372446970436', 'SrprMUznB8ZQx7tqZVkx120iqQCHaJrk');
             //var_dump($_COOKIE);
+            //var_dump (json_decode($_COOKIE[1]));
+            //die();
         ?>
 
             <thead >
@@ -40,6 +44,7 @@ $mp = new MP('7496372446970436', 'SrprMUznB8ZQx7tqZVkx120iqQCHaJrk');
 
                 <th> TALLE/COLOR/CANTIDAD</th>
                 <th> PRECIO</th>
+                <th> ELIMINAR</th>
                 </tr>
             </thead>
 
@@ -53,10 +58,11 @@ $mp = new MP('7496372446970436', 'SrprMUznB8ZQx7tqZVkx120iqQCHaJrk');
 
 					$product = getProduct($idProduct);
                     $productImage = getProductGallery($idProduct);
-                    $descripcion .= $product[0]["name"] . " : [ T: ";
+                    $descripcion .= $product[0]["name"] . " : [ Talle: ";
                     $totalProducto = json_decode($productCookie)->total;
                     $totalCompra += $totalProducto;
                     $arrWaists = json_decode($productCookie)->waist;
+                    $arrColors = json_decode($productCookie)->color;
                     $arrQuantities = json_decode($productCookie)->quantity;
 
                     foreach($arrWaists as $i => $elem){
@@ -65,7 +71,17 @@ $mp = new MP('7496372446970436', 'SrprMUznB8ZQx7tqZVkx120iqQCHaJrk');
                         if(++$i != count($arrWaists)){
                             $descripcion .= " | ";
                         } else {
-                            $descripcion .= " ] [ C: ";
+                            $descripcion .= " ] [ Trama: ";
+                        }
+                    }
+
+                    foreach($arrColors as $i => $elem){
+                        $descripcion .= $elem;
+
+                        if(++$i != count($arrColors)){
+                            $descripcion .= " | ";
+                        } else {
+                            $descripcion .= " ] [ Cantidad: ";
                         }
                     }
 
@@ -89,14 +105,18 @@ $mp = new MP('7496372446970436', 'SrprMUznB8ZQx7tqZVkx120iqQCHaJrk');
 
                         for($i = 0; $i < count($arrWaists); $i++){
                             if(($i + 1) != count($arrWaists)){
-                                echo $arrWaists[$i] . " (" . $arrQuantities[$i] . ") <br>";
+                                echo $arrWaists[$i] . " - ". $arrColors[$i] . " (" . $arrQuantities[$i] . ") <br>";
                             } else {
-                                echo $arrWaists[$i] . " (" . $arrQuantities[$i] . ")";
+                                echo $arrWaists[$i] . " - ". $arrColors[$i] . " (" . $arrQuantities[$i] . ")";
                             }
                         }
                         ?></td>
-                        <td>$ <?php echo $totalProducto . "<br> "  . ($totalProducto / $product[0]["price"]) . " unidades a $ " . $product[0]["price"] . " c/u" ?></td>
-
+                        <?php if ( $product[0]["price_sale"] > 0 ){?>
+                            <td>$ <?php echo $totalProducto . "<br> "  . ($totalProducto / $product[0]["price_sale"]) . " unidades a $ " . $product[0]["price_sale"] . " c/u" ?></td>
+                        <?php }else{?>
+                            <td>$ <?php echo $totalProducto . "<br> "  . ($totalProducto / $product[0]["price"]) . " unidades a $ " . $product[0]["price"] . " c/u" ?></td>
+                        <?php }?>
+                        <td> <a href="javascript:void(0);" class="btn-eliminar-producto" data-compra="<?php echo $idProduct; ?>">X</a> </td>
                     </tr>
 			<?php
                     }

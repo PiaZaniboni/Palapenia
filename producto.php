@@ -84,19 +84,19 @@
 
                                 <?php
                                     if( $st['id_waist'] == 1 ){?>
-                                        <li class="select-talle talle-<?php echo $st['id_color']; ?>" data-id-color="<?php echo $st['id_color']; ?>" data-id-talle="<?php echo $count5; ?>" data-talle="XS">
+                                        <li class="select-talle talle-<?php echo $st['id_color']; ?> click-<?php echo $st['id_color']; ?>-<?php echo $count5; ?>" data-id-color="<?php echo $st['id_color']; ?>" data-id-talle="<?php echo $count5; ?>" data-talle="XS">
                                             <?php echo 'XS'; ?>
                                         </li>
                                     <?php }else if( $st['id_waist'] == 2 ) {?>
-                                        <li class="select-talle talle-<?php echo $st['id_color']; ?>" data-id-color="<?php echo $st['id_color']; ?>" data-id-talle="<?php echo $count5; ?>" data-talle="S">
+                                        <li class="select-talle talle-<?php echo $st['id_color']; ?> click-<?php echo $st['id_color']; ?>-<?php echo $count5; ?>" data-id-color="<?php echo $st['id_color']; ?>" data-id-talle="<?php echo $count5; ?>" data-talle="S">
                                             <?php echo 'S'; ?>
                                         </li>
                                     <?php }else if( $st['id_waist'] == 3 ) {?>
-                                        <li class="select-talle talle-<?php echo $st['id_color']; ?>" data-id-color="<?php echo $st['id_color']; ?>" data-id-talle="<?php echo $count5; ?>" data-talle="M">
+                                        <li class="select-talle talle-<?php echo $st['id_color']; ?> click-<?php echo $st['id_color']; ?>-<?php echo $count5; ?> " data-id-color="<?php echo $st['id_color']; ?>" data-id-talle="<?php echo $count5; ?>" data-talle="M">
                                             <?php echo 'M'; ?>
                                         </li>
                                     <?php }else if( $st['id_waist'] == 4 ) {?>
-                                        <li class="select-talle talle-<?php echo $st['id_color']; ?>" data-id-color="<?php echo $st['id_color']; ?>" data-id-talle="<?php echo $count5; ?>" data-talle="L" >
+                                        <li class="select-talle talle-<?php echo $st['id_color']; ?> click-<?php echo $st['id_color']; ?>-<?php echo $count5; ?> " data-id-color="<?php echo $st['id_color']; ?>" data-id-talle="<?php echo $count5; ?>" data-talle="L" >
                                             <?php echo 'L'; ?>
                                         </li>
                                     <?php }
@@ -110,7 +110,7 @@
                     <label class=" col-sm-4 control-label">CANTIDAD</label>
                     <div class="col-sm-8">
                       <div>
-                        <input id="stock-producto" type="number" name="cantidad" class="cantidad-producto" min="1" max="5" value="1">
+                        <input id="stock-producto" type="number" name="cantidad" class="cantidad-producto" min="1" max="1">
                       </div>
                     </div>
 

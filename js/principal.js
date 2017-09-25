@@ -50,7 +50,7 @@ $(document).ready(function () {
     /*--------------------------------------------------------------
     ## Boton Contacto
     --------------------------------------------------------------*/
-        $("a.submit").click(function(e){
+        /*$("a.submit").click(function(e){
 
             e.preventDefault();
 
@@ -65,7 +65,7 @@ $(document).ready(function () {
                 }
             });
 
-        });
+        });*/
 
         /*--------------------------------------------------------------
         ## Seleccion color
@@ -78,14 +78,22 @@ $(document).ready(function () {
             $('.select-talle').fadeOut();
             $('.talle-' + selectColor).fadeIn();
 
-            //Reseamos stock
-            $('#stock-producto').val(1);
+            //Reseteamos Talle y stock
+            $("#stock-producto").val(1);
+            $( ".select-talle"  ).removeClass( "selected" );
+            $( ".click-"+selectColor+"-1"  ).addClass( "selected" );
+
+            $(".stock-oculto").removeClass("talleMax");
+            $(".co-"+selectColor+"-tl-1").addClass("talleMax");
+            var valorMaximoStock2 = $(".co-"+selectColor+"-tl-1").attr("data-max-stock");
+            $("#stock-producto").attr('max', valorMaximoStock2 );
+
         });
 
         $(document).on('click', '.btn-comprar', function(){
             var colorSelecciono = $(this).parent().find('.col-color').find('.color-lista').find('.selected').attr('data-name-color');
             var waistSelecciono = $(this).parent().find('.col-talle').find('.select-talle').find('.selected').attr('data-talle');
-            var stockSelecciono = $(this).parent().find('#stock-producto').attr('value');
+            var stockSelecciono = $("#stock-producto").val();
             var productPrice = $(this).parent().find('.producto-price').attr('data-price');
             var total = 0;
             var idProduct = $(this).parent().attr('data-product');
@@ -156,6 +164,17 @@ $(document).ready(function () {
 
             setTimeout(function(){ window.location="lista-compra.php"; }, 1000);
         });
+
+        $(document).on('click', '.btn-eliminar-producto', function(){
+            var productoBorrar = $(this).attr("data-compra");
+            console.log(productoBorrar);
+            Cookies.remove(productoBorrar);
+            var cajitaProducto = $(this).parent().parent();
+            $(cajitaProducto).fadeOut();
+            console.log (Cookies.get());
+            window.location.reload();
+        });
+
 });
 
 $(document).on('click', '.btn-select', function (e) {
@@ -176,7 +195,7 @@ $(document).on('click', '.btn-select', function (e) {
             $(".co-"+idTalleColor+"-tl-"+idTalle).addClass("talleMax");
             var valorMaximoStock = $(".co-"+idTalleColor+"-tl-"+idTalle).attr("data-max-stock");
             $('#stock-producto').val(1);
-             $("#stock-producto").attr('max', valorMaximoStock );
+            $("#stock-producto").attr('max', valorMaximoStock );
             //console.log( valorMaximoStock  );
         }
         ul.hide();

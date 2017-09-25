@@ -241,14 +241,10 @@ ul.dropdown-menu > li > a{
   width: 100%;
   width: 100vw;
   
-  background: white;
+  background: #FFF7F7;
   height: 500px;
  }
- #video-muestra{
-  border-radius:0;
-  text-decoration: none;
-  border: 8px solid #000;
- }
+ 
 
  .video-index .btn.focus, .btn:focus, .btn:hover{
   color: #fff;

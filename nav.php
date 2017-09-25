@@ -98,9 +98,46 @@ $categories = getCategories();
         <li class="item-carro">
           <ul class="nav navbar-nav navbar-right carro">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-shopping-cart"></span> 2 <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-shopping-cart"></span>
+                  <?php
+                  $count88 = 0;
+                  foreach($_COOKIE as $idProducto => $element){
+                      if(is_int($idProducto)){
+                          $count88 += 1;
+                      }
+                  }
+                  echo $count88;
+                  ?>
+            <span class="caret"></span></a>
               <ul class="dropdown-menu dropdown-cart" role="menu">
-                <li>
+
+                  <?php
+                  foreach($_COOKIE as $idProduct => $productCookie){
+
+                      if(intval($idProduct) != 0){
+
+                          $product2 = getProduct($idProduct);
+                          $totalProducto = json_decode($productCookie)->total;
+                          ?>
+                          <li data-product="<?php echo $idProduct; ?>">
+                            <span class="item">
+                              <span class="item-left">
+                                <span class="item-info">
+                                  <span><?php echo $product2[0]['name'];?></span>
+                                  <span>$<?php echo $totalProducto ?></span>
+                                </span>
+                              </span>
+                            <span class="item-right">
+                            <!--<button class="btn btn-xs  pull-right">x</button>-->
+                            <div class="btn btn-xs  pull-right"><a href="javascript:void(0);" class="btn-eliminar-producto" data-compra="<?php echo $idProduct; ?>">x</a></div>
+                          </li>
+
+                      <?php
+                          }
+                      } ?>
+
+
+                <!--<li>
                   <span class="item">
                     <span class="item-left">
                       <span class="item-info">
@@ -123,7 +160,7 @@ $categories = getCategories();
                         <button class="btn btn-xs  pull-right">x</button>
                     </span>
                   </span>
-                </li>
+              </li>-->
                 <li class="divider"></li>
                 <li><a class="text-center" href="lista-compra.php">Ver carrito</a></li>
               </ul>

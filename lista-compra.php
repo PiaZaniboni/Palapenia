@@ -57,7 +57,6 @@
                 if(intval($idProduct) != 0){
 
 					$product = getProduct($idProduct);
-                    $productImage = getProductGallery($idProduct);
                     $descripcion .= $product[0]["name"] . " : [ Talle: ";
                     $totalProducto = json_decode($productCookie)->total;
                     $totalCompra += $totalProducto;

@@ -240,8 +240,14 @@ ul.dropdown-menu > li > a{
   margin-bottom: 60px;
   width: 100%;
   width: 100vw;
+  
   background: white;
   height: 500px;
+ }
+ #video-muestra{
+  border-radius:0;
+  text-decoration: none;
+  border: 8px solid #000;
  }
 
  .video-index .btn.focus, .btn:focus, .btn:hover{

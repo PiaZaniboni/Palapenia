@@ -101,9 +101,13 @@ $categories = getCategories();
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-shopping-cart"></span>
                   <?php
                   $count88 = 0;
-                  foreach($_COOKIE as $idProducto => $element){
-                      if(is_int($idProducto)){
-                          $count88 += 1;
+                  if(count($_COOKIE) > 0 ){
+                      $productosPosta = false;
+                      foreach($_COOKIE as $idProducto => $element){
+                          if(is_int($idProducto)){
+                              $count88 += 1;
+                              $productosPosta = true;
+                          }
                       }
                   }
                   echo $count88;
@@ -112,29 +116,32 @@ $categories = getCategories();
               <ul class="dropdown-menu dropdown-cart" role="menu">
 
                   <?php
-                  foreach($_COOKIE as $idProduct => $productCookie){
+                  if(count($_COOKIE) > 0 && $productosPosta == true){
+                      foreach($_COOKIE as $idProduct => $productCookie){
 
-                      if(intval($idProduct) != 0){
+                          if(intval($idProduct) != 0){
 
-                          $product2 = getProduct($idProduct);
-                          $totalProducto = json_decode($productCookie)->total;
-                          ?>
-                          <li data-product="<?php echo $idProduct; ?>">
-                            <span class="item">
-                              <span class="item-left">
-                                <span class="item-info">
-                                  <span><?php echo $product2[0]['name'];?></span>
-                                  <span>$<?php echo $totalProducto ?></span>
-                                </span>
-                              </span>
-                            <span class="item-right">
-                            <!--<button class="btn btn-xs  pull-right">x</button>-->
-                            <div class="btn btn-xs  pull-right"><a href="javascript:void(0);" class="btn-eliminar-producto" data-compra="<?php echo $idProduct; ?>">x</a></div>
-                          </li>
+                              $product2 = getProduct($idProduct);
+                              $totalProducto = json_decode($productCookie)->total;
+                              ?>
+                              <li data-product="<?php echo $idProduct; ?>">
+                                <span class="item">
+                                  <span class="item-left">
+                                    <span class="item-info">
+                                      <span><?php echo $product2[0]['name'];?></span>
+                                      <span>$<?php echo $totalProducto ?></span>
+                                    </span>
+                                  </span>
+                                <span class="item-right">
+                                <!--<button class="btn btn-xs  pull-right">x</button>-->
+                                <div class="btn btn-xs  pull-right"><a href="javascript:void(0);" class="btn-eliminar-producto" data-compra="<?php echo $idProduct; ?>">x</a></div>
+                              </li>
 
-                      <?php
-                          }
-                      } ?>
+                          <?php
+                              }
+                          }?>
+                           <li class="divider"></li>
+                      <?php } ?>
 
 
                 <!--<li>
@@ -161,7 +168,7 @@ $categories = getCategories();
                     </span>
                   </span>
               </li>-->
-                <li class="divider"></li>
+
                 <li><a class="text-center" href="lista-compra.php">Ver carrito</a></li>
               </ul>
             </li>

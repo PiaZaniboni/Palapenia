@@ -20,15 +20,6 @@
 
 
         <?php
-        if(count($_COOKIE) > 0 ){
-            $productosPosta = false;
-            foreach($_COOKIE as $idProducto => $element){
-                if(is_int($idProducto)){
-                    $productosPosta = true;
-                }
-            }
-        }
-
         if(count($_COOKIE) > 0 && $productosPosta == true){
 
             require_once("requests/mercadopago.php");

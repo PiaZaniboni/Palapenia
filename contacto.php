@@ -71,7 +71,7 @@
 
                 </div>
                 <div class="col-md-6 ">
-                    <img class="img-responsive fadeIn" src="images/3.jpg" alt="" >
+                    <img class="img-responsive animated fadeIn" src="images/S6.jpg" alt="" >
                 </div>
             </div>
         </div>

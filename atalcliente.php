@@ -40,7 +40,7 @@ Las prendas en<strong> SALE</strong> no tienen cambio.</p>
  </div>
 
  <div class="col-md-6 ">
- <img class="img-responsive wow fadeIn" src="images/3.jpg" alt="" >
+ <img class="img-responsive wow fadeIn" src="images/S1.jpg" alt="" >
 
  </div>
 

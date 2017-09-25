@@ -20,7 +20,7 @@
         </div>
         
         <div class="col-md-6 ">
-          <img class="img-responsive animated fadeIn " src="images/3.jpg" alt="" >
+          <img class="img-responsive animated fadeIn " src="images/S3.jpg" alt="" >
         </div>
       </div>
     </div>
@@ -29,10 +29,10 @@
   <div class="row">
     <div class=" jumbotron hero-spacer">
       <div class="col-sm-3 ">
-        <img class="img-responsive wow fadeIn" src="images/3.jpg" alt="" >
+        <img class="img-responsive wow fadeIn" src="images/S4.jpg" alt="" >
       </div>
       <div class="col-sm-3 ">
-        <img class="img-responsive wow fadeIn" src="images/3.jpg" alt="" >
+        <img class="img-responsive wow fadeIn" src="images/S5.jpg" alt="" >
       </div>
       <div class="col-sm-6 margen">
         <p class="wow slideInRight">Las colecciones abarcan diferentes estilos,</br> desde la sofisticación de su línea de Personal </br>Tailoring (sastrería a medida), a otras líneas más relajadas y casuales.</br> Todas ellas ponen el acento en prendas y

@@ -219,7 +219,7 @@ ul.dropdown-menu > li > a{
   margin-bottom: 60px;
   width: 100%;
   width: 100vw;
-  background-image: url("../images/2.jpg");
+  background-image: url("../images/S9.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -271,7 +271,7 @@ ul.dropdown-menu > li > a{
   margin-top: 30px;
   width: 100%;
   width: 100vw;
-  background-image: url("../images/lookbok.jpg");
+  background-image: url("../images/S2.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -721,16 +721,18 @@ line-height: 2.1;
 .content-box {
   align-content: center;
     overflow: hidden;
+
 }
 .content-box  .img-responsive{
    align-content: center;
     overflow: hidden;
-   width: 100%;
-    height: 100%;
+  height: 20vh;
+  width: 100%;
     margin:0px;
        -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+
 }
 
 .content-box:hover .img-responsive {
@@ -740,6 +742,7 @@ line-height: 2.1;
 }
 .content-box a{
     display: block;
+
     color: #000;
     font-size: 18px;
     font-weight: 700;
@@ -751,11 +754,13 @@ line-height: 2.1;
     top: 0;
     left: 0;
     opacity: 0;
-    width:  100%;
-    height: 100%;
+  
+  height: 20vh;
+  width: 100%;
     padding: 25% 0;
     line-height: 45px;
     background: #FFFFFF;
+
 
 
     transition: all 0.6s;
@@ -798,6 +803,7 @@ line-height: 2.1;
 }
 .content-box a{
 
+
     color: #000;
     font-size: 10px;
     font-weight: 700;
@@ -809,8 +815,10 @@ line-height: 2.1;
     top: 0;
     left: 0;
     opacity: 0;
-    width:  100%;
-    height: 100%;
+    object-fit: scale-down;
+  height: 20vh;
+  width: 100%;
+
 
     line-height: 20px;
     background: #FFFFFF;
@@ -836,7 +844,7 @@ line-height: 2.1;
 
 
 
-/*lookbook*/
+/*fo*/
  #lookbook .forma{
   width: 80%;
   margin: auto;
@@ -935,7 +943,7 @@ font-size: 18px;
   padding-top: 60px;
   width: 100%;
   width: 100vw;
-  background-image: url("../images/lookbok.jpg");
+  background-image: url("../images/S7.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

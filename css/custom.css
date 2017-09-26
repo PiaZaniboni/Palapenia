@@ -50,12 +50,6 @@ body {
   border-right: none;
 }
 
-.navbar-nav {
-    float:none;
-    margin:0 auto;
-    display: inline-flex;
-    text-align: center;
-}
 
 .navbar-nav > li > a{
      font-weight:300;
@@ -66,7 +60,7 @@ li.dropdown:hover > .dropdown-menu .divider{
   display: inline-block;
   position: relative;
   background-color: #000;
-  width: 0%;
+  width: 50%;
 
 }
 ul.dropdown-menu > li > a{
@@ -359,8 +353,16 @@ transform:scale(1.2);
 
 }
 
+.control-label
 .form-horizontal .control-label{
+ 
   text-align: none;
+}
+.producto-price{
+  padding-top: 5px;
+  font-weight: 700;
+  font-style:italic;
+
 }
 
 @media only screen and (min-width: 500px) {

@@ -36,7 +36,8 @@ body {
 
 }
 
-
+  #home .img-responsive2{
+   }
 
 .nav>.item-carro {
   position: absolute;
@@ -204,6 +205,7 @@ ul.dropdown-menu > li > a{
 #fondocampania{
   margin-top: 30px;
   padding-top: 60px;
+  padding-bottom: 100px;
   margin-bottom: 60px;
   width: 100%;
   width: 100vw;
@@ -214,7 +216,7 @@ ul.dropdown-menu > li > a{
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  height: 230px;
+  height: auto;
 }
 
 #fondocampania .img-responsive{
@@ -225,14 +227,16 @@ ul.dropdown-menu > li > a{
  #fondovideo{
   margin-top: 30px;
   padding-top: 60px;
+  padding-bottom: 100px;
   margin-bottom: 60px;
   width: 100%;
   width: 100vw;
-  
   background: #FFF7F7;
-  height: 500px;
  }
  
+.video-index{
+  margin-top: 60px;
+  }
 
  .video-index .btn.focus, .btn:focus, .btn:hover{
   color: #fff;
@@ -308,6 +312,11 @@ ul.dropdown-menu > li > a{
   margin: 40px 0px;
 }
 
+@media only screen and (max-width: 500px) {
+  #footer .footer-info{ 
+  width: 90%; 
+}
+}
 /*---------home*/
 
 /*slider */
@@ -485,6 +494,14 @@ font-weight: 400;
     margin-bottom: 10px;
     margin-left: 20%;
   }
+
+  #home .img-responsive2{
+    margin: 0;
+    max-width: 100%;
+    margin-bottom: 10px;
+    margin-left: 0;
+  }
+
   #fondocampania .img-responsive{
    margin: 0 auto;
    min-width: 350px;

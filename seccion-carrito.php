@@ -11,7 +11,7 @@
 <div id="listacompra">
 <div class="container">
     <div class="row ">
-    <div class=" jumbotron hero-spacer  ">
+    <div class=" jumbotron hero-spacer">
         <?php $cat = $_GET['cat'];?>
     <p class="animated slideInUp"> <?php echo $cat; ?> </p>
 

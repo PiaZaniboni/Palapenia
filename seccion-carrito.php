@@ -32,11 +32,11 @@
                 ?>
                 <div class="col-sm-3 sinpadding animated fadeIn">
                     <div class="content-box text-center">
-                        <a href="producto.php?idp=<?php echo $product['id_product']; ?>">
+                        <a class="img-responsive" href="producto.php?idp=<?php echo $product['id_product']; ?>"  style="background-image:url('<?php echo $src; ?>')">
                             <?php if ( $product['price_sale'] > 0 ) {?>
                                 <img class="img-sale" src="images/sale.png" alt="Producto Sale">
-                            <?php }?>    
-                            <img src="<?php echo $src; ?>" class="img-responsive" alt="">
+                            <?php }?>
+                            <!--    <img src="<?php echo $src; ?>" class="img-responsive" alt=""> -->
                             <span class="content-link text-uppercase"><h3><?php echo $product['name']; ?></h3>
                             <?php if ( $product['price_sale'] > 0 ) {?>
 

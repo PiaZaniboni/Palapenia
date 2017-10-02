@@ -110,7 +110,7 @@ ul.dropdown-cart li .item-left button{
 .item-carro{
   position: absolute;
   float: left;
- 
+
 }
 
 .carro{
@@ -233,7 +233,7 @@ ul.dropdown-menu > li > a{
   width: 100vw;
   background: #FFF7F7;
  }
- 
+
 .video-index{
   margin-top: 60px;
   }
@@ -313,8 +313,8 @@ ul.dropdown-menu > li > a{
 }
 
 @media only screen and (max-width: 500px) {
-  #footer .footer-info{ 
-  width: 90%; 
+  #footer .footer-info{
+  width: 90%;
 }
 }
 /*---------home*/
@@ -364,7 +364,7 @@ transform:scale(1.2);
 
 .control-label
 .form-horizontal .control-label{
- 
+
   text-align: none;
 }
 .producto-price{
@@ -740,14 +740,18 @@ line-height: 2.1;
 }
 .content-box  .img-responsive{
    align-content: center;
-    overflow: hidden;
-  height: 20vh;
-  width: 100%;
-    margin:0px;
-       -moz-transition: all 0.3s;
+   overflow: hidden;
+   margin:0px;
+   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 
+}
+
+.img-sale{
+    position: absolute;
+    left: 0;
+    top: 50px;
 }
 
 .content-box:hover .img-responsive {
@@ -757,20 +761,23 @@ line-height: 2.1;
 }
 .content-box a{
     display: block;
-
     color: #000;
     font-size: 18px;
     font-weight: 700;
-
     position: relative;
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+
 .content-link{
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
-  
-  height: 20vh;
+
+  height: 100%;
   width: 100%;
     padding: 25% 0;
     line-height: 45px;

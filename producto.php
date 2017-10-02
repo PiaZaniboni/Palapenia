@@ -157,7 +157,7 @@
                       <div class="col-sm-12" >
                           <div class="slide" id="myCarousel3">
                               <!-- Carousel items -->
-                              <div class="carousel-inner ">
+                              <div class="carousel-inner zoom">
                                   <?php $productImages = getProductGallery( $producto[0]['id_product'] );
                                         $count = 0;
                                         foreach( $productImages as $productImage ){

@@ -35,9 +35,9 @@ if($_SERVER["HTTP_HOST"] === "localhost"){
 	define("WEB_PATH", "http://www.unbarco.com/palapenia");
 	define("APP_PATH", "http://www.unbarco.com/palapenia/pl-admin");
 
-	define("DB_NAME", "cw000502_ensimis");
-	define("DB_USER", "cw000502_ensimis");
-	define("DB_PASSWORD", "valaleSE92");
+	define("DB_NAME", "palapeni_db");
+	define("DB_USER", "palapeni");
+	define("DB_PASSWORD", "cs99Hi12iM");
 
 	define("ACTIVATE_URL_FRIENDLY", false);
 }

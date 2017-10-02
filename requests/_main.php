@@ -11,7 +11,7 @@ function connect(){
 	}else if($_SERVER["HTTP_HOST"] === "localhost:8888"){
 		return mysqli_connect("localhost", "root", "root", "palapenia-db");
 	}else {
-		return mysqli_connect("localhost", "", "", "");
+		return mysqli_connect("localhost", "palapeni", "cs99Hi12iM", "palapeni_db");
 	}
 	/*if(mysqli_connect_errno()){
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();

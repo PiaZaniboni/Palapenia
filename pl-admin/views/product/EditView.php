@@ -68,9 +68,9 @@ class EditView extends View {
                             Talle / Stock
                         </label><br>
                         <div class="waists">
-                                <?php
+                                <!--<?php
 
-                                foreach($arrStock as $stock){
+                                /*foreach($arrStock as $stock){
                                     echo " -- ";
                                     echo "color ";
                                     var_dump($stock["id_color"]);
@@ -79,8 +79,8 @@ class EditView extends View {
                                     echo "stock  ";
                                     var_dump($stock["stock"]);
                                     echo " -- ";
-                                }
-                                ?>
+                                }*/
+                                ?> -->
 
 
                                 <?php foreach($colors as $i => $color){ ?>
@@ -91,19 +91,19 @@ class EditView extends View {
 
                                      <div class="col-md-3">
                                          <p>XS</p>
-                                         <input name="quantity_xs_<?php echo $color->getInitial() ?>" type="text" value="<?php //echo $stock[$i][4] ?>">
+                                         <input name="quantity_xs_<?php echo $color->getInitial() ?>" type="text" value="<?php echo $arrStock[$i]["stock"] ?>">
                                      </div>
                                      <div class="col-md-3">
                                          <p>S</p>
-                                         <!--<input name="quantity_s_<?php echo $color->getInitial() ?>" type="text" value="<?php echo $stock[$i + count($colors)][4] ?>">-->
+                                         <input name="quantity_s_<?php echo $color->getInitial() ?>" type="text" value="<?php echo $arrStock[$i + count($colors)]["stock"]?>">
                                      </div>
                                      <div class="col-md-3">
                                          <p>M</p>
-                                         <!--<input name="quantity_m_<?php echo $color->getInitial() ?>" type="text" value="<?php echo $stock[$i + (count($colors) * 2)][4] ?>"> -->
+                                         <input name="quantity_m_<?php echo $color->getInitial() ?>" type="text" value="<?php echo $arrStock[$i + (count($colors) * 2)]["stock"] ?>">
                                      </div>
                                     <div class="col-md-3">
                                         <p>L</p>
-                                        <!--<input name="quantity_l_<?php echo $color->getInitial() ?>" type="text" value="<?php echo $stock[$i + (count($colors) * 3)][4] ?>"> -->
+                                        <input name="quantity_l_<?php echo $color->getInitial() ?>" type="text" value="<?php echo $arrStock[$i + (count($colors) * 3)]["stock"] ?>">
                                     </div>
                                 </div>
                                 <?php } ?>

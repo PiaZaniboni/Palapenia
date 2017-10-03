@@ -50,7 +50,7 @@ $(document).ready(function () {
     /*--------------------------------------------------------------
     ## Boton Contacto
     --------------------------------------------------------------*/
-        /*$("a.submit").click(function(e){
+        $("a.submit-mail").click(function(e){
 
             e.preventDefault();
 
@@ -65,7 +65,7 @@ $(document).ready(function () {
                 }
             });
 
-        });*/
+        });
 
         /*--------------------------------------------------------------
         ## Seleccion color

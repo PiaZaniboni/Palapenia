@@ -23,7 +23,7 @@
         if(count($_COOKIE) > 0 && $productosPosta == true){
 
             require_once("requests/mercadopago.php");
-            $mp = new MP('7496372446970436', 'SrprMUznB8ZQx7tqZVkx120iqQCHaJrk');
+            $mp = new MP('6889983612539780', 'REZQenQPCG2Cn0O34JzihK6HDsXSByzx');
             //var_dump($_COOKIE);
             //var_dump (json_decode($_COOKIE[1]));
             //die();

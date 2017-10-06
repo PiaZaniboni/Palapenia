@@ -8,7 +8,7 @@
               <li>
                   <a href="https://www.facebook.com/indumentariapalapenia/" target="_blank">
                       <i class="fa-li fa fa-facebook-square fa-lg fa-inverse" aria-hidden="true" ></i>
-                      IndumentariaPalapenia
+                      Palapenia
                   </a>
               </li>
               <li>
@@ -20,8 +20,8 @@
               <li>
                   <a href="">
                       <i class="fa-li fa fa-envelope-o fa-lg fa-inverse" aria-hidden="true"></i>
-                      Mayoristas: ventas@palapenia.com </br>
-                      Minoristas: info@palapenia.com
+                
+                       info@palapenia.com
                   </a>
               </li>
 

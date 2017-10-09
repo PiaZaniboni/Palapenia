@@ -49,8 +49,8 @@
                             <li>
                                 <a href="">
                                     <i class="fa-li fa fa-envelope-o fa-lg" aria-hidden="true"></i>
-                                    Mayoristas: ventas@palapenia.com </br>
-                                    Minoristas: info@palapenia.com
+                                  
+                                     info@palapenia.com
                                 </a>
                             </li>
                             <li>

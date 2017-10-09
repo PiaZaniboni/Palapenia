@@ -24,8 +24,8 @@
                                 <div class="form-group">
                                    <textarea name="message" class="form-control" id="description" placeholder="..." required></textarea>
                                 </div>
-                                <div class="btn-submit">
-                                    <a class="submit-mail" href="">Enviar</a>
+                                <div class="">
+                                    <a class="btn btn-default submit " href="">Enviar</a>
                                     <p class="frm-message"></p>
                                 </div>
                             </fieldset>

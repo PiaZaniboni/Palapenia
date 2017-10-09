@@ -146,7 +146,7 @@
 
                   </div>
                   <a href="javascript:void(0);" class="btn-comprar">
-                    <button type="button" class="btn btn-default button"> Lo quiero</button>
+                    <button type="button" class="btn btn-default submit"> Lo quiero</button>
                   </a>
                 </form>
               </div>

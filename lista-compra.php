@@ -20,12 +20,13 @@
 
 
         <?php
+
         if(count($_COOKIE) > 0 && $productosPosta == true){
 
             require_once("requests/mercadopago.php");
             $mp = new MP('6889983612539780', 'REZQenQPCG2Cn0O34JzihK6HDsXSByzx');
             //var_dump($_COOKIE);
-            //var_dump (json_decode($_COOKIE[1]));
+            //var_dump (json_decode($_COOKIE[0]));
             //die();
         ?>
 
@@ -43,9 +44,15 @@
             $totalCompra = 0;
             $descripcion = "";
 
-			foreach($_COOKIE as $idProduct => $productCookie){
+			foreach($_COOKIE as $idProduct => $productPreCookie){
+
 
                 if(intval($idProduct) != 0){
+
+                    //var_dump($productPreCookie);
+                    $productCookie = stripslashes($productPreCookie);
+                    //var_dump($productCookie);
+                    //die();
 
 					$product = getProduct($idProduct);
                     $descripcion .= $product[0]["name"] . " : [ Talle: ";
@@ -55,8 +62,8 @@
                     $arrColors = json_decode($productCookie)->color;
                     $arrQuantities = json_decode($productCookie)->quantity;
 
-                    foreach($arrWaists as $i => $elem){
-                        $descripcion .= $elem;
+                    foreach($arrWaists as $i){
+                        $descripcion .= $i;
 
                         if(++$i != count($arrWaists)){
                             $descripcion .= " | ";
@@ -101,11 +108,25 @@
                             }
                         }
                         ?></td>
-                        <?php if ( $product[0]["price_sale"] > 0 ){?>
-                            <td>$ <?php echo $totalProducto . "<br> "  . ($totalProducto / $product[0]["price_sale"]) . " unidades a $ " . $product[0]["price_sale"] . " c/u" ?></td>
-                        <?php }else{?>
-                            <td>$ <?php echo $totalProducto . "<br> "  . ($totalProducto / $product[0]["price"]) . " unidades a $ " . $product[0]["price"] . " c/u" ?></td>
-                        <?php }?>
+                        <?php
+                            $cantidadProductos = 0;
+                            $precioMostrar = 0;
+                        if ( $product[0]["price_sale"] > 0 ){
+                            $cantidadProductos = $totalProducto / $product[0]["price_sale"];
+                            $precioMostrar = $product[0]["price_sale"];
+                         }else{
+                            $cantidadProductos = $totalProducto / $product[0]["price"];
+                            $precioMostrar = $product[0]["price"];
+                         }
+
+                         $stringProducto = " unidad";
+                         if ($cantidadProductos > 1){
+                             $stringProducto = " unidades";
+                         }
+                         ?>
+
+                        <td>$ <?php echo $totalProducto . "<br> "  . ($cantidadProductos) . $stringProducto . " a $ " . $precioMostrar . " c/u" ?></td>
+
                         <td> <a href="javascript:void(0);" class="btn-eliminar-producto" data-compra="<?php echo $idProduct; ?>">X</a> </td>
                     </tr>
 			<?php
@@ -117,14 +138,14 @@
                         array(
                             "title"=> $descripcion,
                             "currency_id"=> "ARS",
-                            "picture_url"=> "http://localhost/ensimisma/img/log.svg",
+                            "picture_url"=> "http://www.palapenia.com.ar/images/logo-negro.png",
                             "description"=> "Varios productos",
                             "quantity"=> 1,
                             "unit_price"=> $totalCompra
                         )
                     ),
                     "back_urls" => array(
-                        "success" => "http://localhost/ensimisma/success.php"
+                        "success" => "http://www.palapenia.com.ar/success.php"
                     )
                 );
 

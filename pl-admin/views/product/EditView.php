@@ -90,8 +90,8 @@ class EditView extends View {
                                  <div class="row options">
 
                                      <div class="col-md-3">
-                                         <p>XS</p>
-                                         <input name="quantity_xs_<?php echo $color->getInitial() ?>" type="text" value="<?php echo $arrStock[$i]["stock"] ?>">
+                                         <p>Unico</p>
+                                         <input name="quantity_unico_<?php echo $color->getInitial() ?>" type="text" value="<?php echo $arrStock[$i]["stock"] ?>">
                                      </div>
                                      <div class="col-md-3">
                                          <p>S</p>

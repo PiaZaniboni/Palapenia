@@ -70,8 +70,8 @@ class AddView extends View {
                             </label>
                             <div class="row options">
                                 <div class="col-md-3">
-                                    <p>XS</p>
-                                    <input name="quantity_xs_<?php echo $color->getInitial() ?>" type="text" value="0">
+                                    <p>Unico</p>
+                                    <input name="quantity_unico_<?php echo $color->getInitial() ?>" type="text" value="0">
                                 </div>
                                 <div class="col-md-3">
                                     <p>S</p>

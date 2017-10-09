@@ -84,8 +84,8 @@
 
                                 <?php
                                     if( $st['id_waist'] == 1 ){?>
-                                        <li class="select-talle talle-<?php echo $st['id_color']; ?> click-<?php echo $st['id_color']; ?>-<?php echo $count5; ?>" data-id-color="<?php echo $st['id_color']; ?>" data-id-talle="<?php echo $count5; ?>" data-talle="XS">
-                                            <?php echo 'XS'; ?>
+                                        <li class="select-talle talle-<?php echo $st['id_color']; ?> click-<?php echo $st['id_color']; ?>-<?php echo $count5; ?>" data-id-color="<?php echo $st['id_color']; ?>" data-id-talle="<?php echo $count5; ?>" data-talle="unico">
+                                            <?php echo 'Unico'; ?>
                                         </li>
                                     <?php }else if( $st['id_waist'] == 2 ) {?>
                                         <li class="select-talle talle-<?php echo $st['id_color']; ?> click-<?php echo $st['id_color']; ?>-<?php echo $count5; ?>" data-id-color="<?php echo $st['id_color']; ?>" data-id-talle="<?php echo $count5; ?>" data-talle="S">
@@ -112,7 +112,7 @@
                 <a href="#tabla-de-talles" data-toggle="modal" data-target="#miModal">
                   Abrir modal
                 </a>
-                
+
                 <div class="modal fade" id="tabla-de-talles" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -129,10 +129,10 @@
                   </div>
                 </div>
 
-              </div> 
-              
+              </div>
 
-              
+
+
                     <label class=" col-sm-4 control-label">CANTIDAD</label>
                     <div class="col-sm-8">
                       <div>

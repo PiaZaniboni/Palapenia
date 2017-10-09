@@ -117,10 +117,11 @@ $categories = getCategories();
 
                   <?php
                   if(count($_COOKIE) > 0 && $productosPosta == true){
-                      foreach($_COOKIE as $idProduct => $productCookie){
+                      foreach($_COOKIE as $idProduct => $productPreCookie){
 
                           if(intval($idProduct) != 0){
 
+                              $productCookie = stripslashes($productPreCookie);
                               $product2 = getProduct($idProduct);
                               $totalProducto = json_decode($productCookie)->total;
                               ?>

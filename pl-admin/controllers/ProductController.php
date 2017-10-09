@@ -83,7 +83,7 @@ class ProductController extends Controller {
 									"id_category" => $_POST['id_category'],
 									"id_waist" => 1,
 									"id_color" => $c->getIdColor(),
-									"stock" => $_POST["quantity_xs_" . $c->getInitial()]
+									"stock" => $_POST["quantity_unico_" . $c->getInitial()]
 								);
 								$this->actualModel->addStockProduct($prCaWaCoSt);
 							}
@@ -196,7 +196,7 @@ class ProductController extends Controller {
 								"id_category" => $_POST['id_category'],
 								"id_waist" => 1,
 								"id_color" => $c->getIdColor(),
-								"stock" => $_POST["quantity_xs_" . $c->getInitial()]
+								"stock" => $_POST["quantity_unico_" . $c->getInitial()]
 							);
 							$this->actualModel->addStockProduct($prCaWaCoSt);
 						}

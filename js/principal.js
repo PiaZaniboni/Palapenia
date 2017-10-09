@@ -152,7 +152,7 @@ $(document).ready(function () {
                 total = productPrice * stockSelecciono;
 
                 if(total > 0){
-                    var product = { /*id_product: idProduct,*/ waist: waistSelecciono.split(), color: colorSelecciono.split(), quantity: stockSelecciono.split(), total: total };
+                    var product = {  waist: waistSelecciono.split(), color: colorSelecciono.split(), quantity: stockSelecciono.split(), total: total };
                     //var idCompra = Date.now();
                     //console.log(idCompra);
                     Cookies.set( idProduct , JSON.stringify(product), { expires: 0.250 });
@@ -162,7 +162,7 @@ $(document).ready(function () {
                 }
             }
 
-            setTimeout(function(){ window.location="lista-compra.php"; }, 1000);
+            setTimeout(function(){ window.location="lista-compra.php"; }, 300);
         });
 
         $(document).on('click', '.btn-eliminar-producto', function(){

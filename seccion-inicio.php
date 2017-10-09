@@ -22,29 +22,18 @@
 	<div id="fondocampania">
 		<img class="img-responsive animated wow slideInUp" src="images/campania.svg" alt="" >
 	</div>
-	<div id="fondovideo">
+	
+	<div class="fondovideo">		
 		<div class="container">
-			<div class="texto-index col-lg-6 col-sm-12">
+			<div class="texto-index animated wow slideInUp col-md-6 col-sm-12">
 				<p>MIRÁ<br>NUESTRA<br>CAMPAÑA</p>
 			</div>
-			<div class="video-index col-lg-6 col-sm-12">
-				<a href="#videoCampania" data-toggle="modal" class="img-responsive btn" alt="imagen-video">
-					<img src="images/portadavideo.jpg" class="portadavideo">
-				</a>
+			<div class="video-index animated wow slideInUp col-md-6 col-sm-12 ">
 
-				<div id="videoCampania" class="modal fade">
-			        <div class="modal-dialog">
-			            <div class="modal-content">
-			                <div class="modal-header">
-			                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			                </div>
-			                <div class="modal-body">
-			                    <iframe id="video-muestra" width="560" height="315" src="//www.facebook.com/pg/indumentariapalapenia/videos/?ref=page_internal" frameborder="0" allowfullscreen></iframe>
-			                </div>
-			            </div>
-			        </div>
-		    	</div>
+			<video class="img-responsive2" controls="controls" id="video-muestra" width="560" height="315">
+        		<source src="images/video.mp4" type="video/mp4">
+		    	
 	    	</div>
 	    </div>
-	</div>
+	
 </div>

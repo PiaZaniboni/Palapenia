@@ -108,28 +108,7 @@
                 </a>
               </div>
 
-              <div class="tablatalles">
-                <a href="#tabla-de-talles" data-toggle="modal" data-target="#miModal">
-                  Abrir modal
-                </a>
-
-                <div class="modal fade" id="tabla-de-talles" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h4 class="modal-title" id="myModalLabel">Esto es un modal</h4>
-                      </div>
-                      <div class="modal-body">
-                        <img src="images/tabladetalles2.png" class="img-responsive">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+             
 
 
 
@@ -256,7 +235,16 @@
     </div>
    </div>
     </div>
-
+<div class="fondovideo">
+  <div class="container ">
+      <div class="texto-index animated wow slideInUp col-md-6 col-sm-12">
+        <p>TABLA<br>DE TALLES</p>
+      </div>
+      <div class="video-index animated slideInUp col-md-6 col-sm-12 cont-tabla">
+        <img src="images/tabladetalles2.png" alt="tabla de talles" class="img-responsive tabla-talles">
+      </div>
+   </div>
+ </div> 
 
 <?php include 'footer-info.php'; ?>
   <?php include 'footer.php';?>
